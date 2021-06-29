@@ -5,10 +5,10 @@
         static void Main(string[] args)
         {
             var driveConverter = new OneDriveConverter();
-            var file = new FileFromDisk();
+            IFile file = new FileFromDisk();
             file.Read("КОСТЯ.docx");
-            driveConverter.SendFile(file.Stream);
-            file.Stream = driveConverter.GetFile();
+            driveConverter.SendFile(((FileFromDisk)file).Stream);
+            ((FileFromDisk)file).Stream = driveConverter.GetFile();
             driveConverter.DeleteFile();
             file.Write();
         }

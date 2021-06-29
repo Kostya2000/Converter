@@ -1,27 +1,17 @@
 ﻿using System.IO;
-using NLog;
+using System;
 
 namespace Converter
 {
-    class FileFromDisk
+    class FileFromDisk : IFile
     {
-        static Logger logger = LogManager.GetCurrentClassLogger();
-        Stream stream;
-        string name;
-
         /// <summary>
         /// Геттер и сеттер для потока данных
         /// </summary>
         public Stream Stream
         {
-            get
-            {
-                return stream;
-            }
-            set
-            {
-                stream = value;
-            }
+            get { return stream; }
+            set { stream = value; }
         }
 
         /// <summary>
@@ -34,11 +24,11 @@ namespace Converter
             name = fileName;
             if (!File.Exists(fileName))
             {
-                logger.Error("Файл не найден");
+                IFile.logger.Error("Файл не найден");
                 throw new FileNotFoundException("Файл не найден");
             }
             stream = File.OpenRead(fileName);
-            logger.Info("Файл успешно загружен из диска");
+            IFile.logger.Info("Файл успешно загружен из диска");
         }
 
         /// <summary>
@@ -49,9 +39,12 @@ namespace Converter
             using (var file = new FileStream(ReplaceExtension(name), FileMode.Create))
             {
                 stream.CopyTo(file);
-                logger.Info("Файл успешно получен из сервера");
+                IFile.logger.Info("Файл успешно загружен на диск");
             }
         }
+
+        private Stream stream;
+        private string name = null;
 
         /// <summary>
         /// меняем расширения файла
@@ -60,6 +53,11 @@ namespace Converter
         /// <returns>Название файла с расширением pdf</returns>
         private string ReplaceExtension(string fileName)
         {
+            if (fileName == null)
+            {
+                IFile.logger.Error("Неккоректное название файла");
+                throw new ArgumentNullException("Неккоректное название файла");
+            }
             return fileName.Replace(".docx", ".pdf");
         }
     }

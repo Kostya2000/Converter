@@ -9,6 +9,11 @@
             Аутентификация по принципу lazy
             </summary>
         </member>
+        <member name="M:Converter.Authentification.#ctor">
+            <summary>
+            Конструктор для загружки из файла конфигурации данных
+            </summary>
+        </member>
         <member name="M:Converter.Authentification.Auth">
             <summary>
             Аутентификация OneDrive
@@ -53,13 +58,14 @@
             Отправляем файл на сервер
             </summary>
             <param name="stream">Поток данных</param>
+            <exception cref="T:System.NullReferenceException">Не удалось подключится к серверу</exception>
+            <exception cref="T:System.ArgumentNullException">"Данные из файла не загружены"</exception>
         </member>
         <member name="M:Converter.OneDriveConverter.GetFile">
              <summary>
              Получаем файл с сервера
              </summary>
-            <exception cref="T:System.NullReferenceException">Не удалось подключится к серверу</exception> 
-            <exception cref="T:System.Exception">Возможно нет доступа к интернету</exception>
+            <exception cref="T:System.NullReferenceException">Не удалось подключится к серверу</exception>
         </member>
         <member name="M:Converter.OneDriveConverter.DeleteFile">
             <summary>
@@ -67,9 +73,9 @@
             </summary>
             <exception cref="T:System.NullReferenceException">Не удалось подключится к серверу</exception>
         </member>
-        <member name="M:Converter.OneDriveConverter.#ctor">
+        <member name="P:Converter.OneDriveConverter.GUID">
             <summary>
-            Конструктор с загрузкой конфигурационных данных
+            Генерация guid по принципу lazy
             </summary>
         </member>
     </members>

@@ -6,21 +6,25 @@ namespace Converter
 {
     class OneDriveConverter
     {
-        Authentification Authentification = new Authentification();
-        string guid;
-        static Logger logger = LogManager.GetCurrentClassLogger();
+        private static Logger logger = LogManager.GetCurrentClassLogger();
 
         /// <summary>
         /// Отправляем файл на сервер
         /// </summary>
         /// <param name="stream">Поток данных</param>
         /// <exception cref="NullReferenceException">Не удалось подключится к серверу</exception>
+        /// <exception cref="ArgumentNullException">"Данные из файла не загружены"</exception>
         public void SendFile(Stream stream)
         {
             logger.Info("Запрос на отправку файла на OneDrive");
+            if (stream == null)
+            {
+                logger.Error("Данные из файла не загружены");
+                throw new ArgumentNullException("Данные из файла не загружены");
+            }
             var webHeader = new System.Net.WebHeaderCollection();
             webHeader.Add("Authorization", "Bearer " + Authentification.Token.ToString());
-            var graphUrl = $"https://graph.microsoft.com/v1.0/drive/root:/{guid}:/content";
+            var graphUrl = $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}:/content";
             
             var request = System.Net.WebRequest.Create(graphUrl);
             request.Headers = webHeader;
@@ -40,14 +44,13 @@ namespace Converter
         /// <summary>
         /// Получаем файл с сервера
         /// </summary>
-        ///<exception cref="NullReferenceException">Не удалось подключится к серверу</exception> 
-        ///<exception cref="Exception">Возможно нет доступа к интернету</exception>
+        ///<exception cref="NullReferenceException">Не удалось подключится к серверу</exception>
         public Stream GetFile()
         {
             logger.Info("Запрос на загрузку файла из OneDrive");
             var webHeader = new System.Net.WebHeaderCollection();
             webHeader.Add("Authorization", "Bearer " + Authentification.Token.ToString());
-            var graphUrl = $"https://graph.microsoft.com/v1.0/drive/root:/{guid}:/content?format=pdf";
+            var graphUrl = $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}:/content?format=pdf";
 
             var request = System.Net.WebRequest.Create(graphUrl);
             request.Headers = webHeader;
@@ -73,7 +76,7 @@ namespace Converter
             logger.Info("Запрос на удаление файла из OneDrive");
             var webHeader = new System.Net.WebHeaderCollection();
             webHeader.Add("Authorization", "Bearer " + Authentification.Token.ToString());
-            var graphUrl = $"https://graph.microsoft.com/v1.0/drive/root:/{guid}";
+            var graphUrl = $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}";
             var request = System.Net.WebRequest.Create(graphUrl);
             request.Headers = webHeader;
             request.Method = "DELETE";
@@ -87,12 +90,15 @@ namespace Converter
             logger.Info("Файл успешно удален с сервера");
         }
 
+        private Authentification Authentification = new Authentification();
+        private string guid = null;
+
         /// <summary>
-        /// Конструктор с загрузкой конфигурационных данных
+        /// Генерация guid по принципу lazy
         /// </summary>
-        public OneDriveConverter()
+        private string GUID
         {
-            guid = Guid.NewGuid().ToString() + ".docx";
+            get { return guid ??= Guid.NewGuid().ToString() + ".docx"; }
         }
     }
 }

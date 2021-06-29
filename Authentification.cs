@@ -9,13 +9,19 @@ namespace Converter
 {
     class Authentification
     {
-        string client_id;
-        string client_secret;
-        string tenant;
-        string urlAuth;
-        JToken token;
-        static Logger logger = LogManager.GetCurrentClassLogger();
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+        
+        /// <summary>
+        /// Аутентификация по принципу lazy
+        /// </summary>
+        public JToken Token
+        {
+            get { return token ??= Auth(); }
+        }
 
+        /// <summary>
+        /// Конструктор для загружки из файла конфигурации данных
+        /// </summary>
         public Authentification()
         {
             logger.Info("Выполняется загрузка конфигурации OneDrive");
@@ -26,13 +32,11 @@ namespace Converter
             logger.Info("Загрузка конфигурации OneDrive прошла успешно");
         }
 
-        /// <summary>
-        /// Аутентификация по принципу lazy
-        /// </summary>
-        public JToken Token
-        {
-            get { return token ??= Auth(); }
-        }
+        string client_id;
+        string client_secret;
+        string tenant;
+        string urlAuth;
+        JToken token;
 
         /// <summary>
         /// Аутентификация OneDrive
