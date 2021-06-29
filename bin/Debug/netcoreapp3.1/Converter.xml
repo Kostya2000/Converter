@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Converter</name>
+    </assembly>
+    <members>
+        <member name="P:Converter.Authentification.Token">
+            <summary>
+            Аутентификация по принципу lazy
+            </summary>
+        </member>
+        <member name="M:Converter.Authentification.Auth">
+            <summary>
+            Аутентификация OneDrive
+            </summary>
+            <returns>Токен доступа</returns>
+            <exception cref = "T:System.NullReferenceException">Не удалось аутентифицироваться с OneDrive</exception>
+        </member>
+        <member name="M:Converter.Authentification.ParseToken(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Парсим ответ от сервера
+            </summary>
+            <param name="responseMessage">Ответ от сервера</param>
+            <returns>Токен доступа</returns>
+            <exception cref="T:System.NullReferenceException">Не удалось аутентифицироваться с OneDrive</exception>
+        </member>
+        <member name="P:Converter.FileFromDisk.Stream">
+            <summary>
+            Геттер и сеттер для потока данных
+            </summary>
+        </member>
+        <member name="M:Converter.FileFromDisk.Read(System.String)">
+            <summary>
+            Чтение файла из диска
+            </summary>
+            <param name="fileName"></param>
+            <exception cref="T:System.IO.FileNotFoundException">Не удалось найти файл на диске</exception>
+        </member>
+        <member name="M:Converter.FileFromDisk.Write">
+            <summary>
+            Запись файла на диск
+            </summary>
+        </member>
+        <member name="M:Converter.FileFromDisk.ReplaceExtension(System.String)">
+            <summary>
+            меняем расширения файла
+            </summary>
+            <param name="fileName">Название файла</param>
+            <returns>Название файла с расширением pdf</returns>
+        </member>
+        <member name="M:Converter.OneDriveConverter.SendFile(System.IO.Stream)">
+            <summary>
+            Отправляем файл на сервер
+            </summary>
+            <param name="stream">Поток данных</param>
+        </member>
+        <member name="M:Converter.OneDriveConverter.GetFile">
+             <summary>
+             Получаем файл с сервера
+             </summary>
+            <exception cref="T:System.NullReferenceException">Не удалось подключится к серверу</exception> 
+            <exception cref="T:System.Exception">Возможно нет доступа к интернету</exception>
+        </member>
+        <member name="M:Converter.OneDriveConverter.DeleteFile">
+            <summary>
+            Удаляем файла с сервера
+            </summary>
+            <exception cref="T:System.NullReferenceException">Не удалось подключится к серверу</exception>
+        </member>
+        <member name="M:Converter.OneDriveConverter.#ctor">
+            <summary>
+            Конструктор с загрузкой конфигурационных данных
+            </summary>
+        </member>
+    </members>
+</doc>

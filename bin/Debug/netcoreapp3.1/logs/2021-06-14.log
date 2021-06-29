@@ -1,0 +1,54 @@
+2021-06-14 12:28:48.4139  method:  Converter.OneDriveConverter..ctor         
+    INFO Загрузка конфигурации OneDrive 
+
+2021-06-14 12:28:49.4526  method:  Converter.OneDriveConverter.Auth         
+    DEBUG Аутентификация прошла успешно 
+
+2021-06-14 13:21:03.1611  method:  Converter.OneDriveConverter..ctor         
+    INFO Загрузка конфигурации OneDrive 
+
+2021-06-14 13:21:09.7192  method:  Converter.OneDriveConverter..ctor         
+    INFO Загрузка конфигурации OneDrive 
+
+2021-06-14 13:21:16.6235  method:  Converter.OneDriveConverter.Auth         
+    DEBUG Аутентификация прошла успешно 
+
+2021-06-14 13:23:51.4349  method:  Converter.OneDriveConverter..ctor         
+    INFO Загрузка конфигурации OneDrive 
+
+2021-06-14 13:23:52.7677  method:  Converter.OneDriveConverter.Auth         
+    DEBUG Аутентификация прошла успешно 
+
+2021-06-14 13:23:52.8502  method:  Converter.OneDriveConverter.SendFile         
+    ERROR Файл не найден 
+
+2021-06-14 13:24:15.5418  method:  Converter.OneDriveConverter..ctor         
+    INFO Загрузка конфигурации OneDrive 
+
+2021-06-14 13:24:16.8190  method:  Converter.OneDriveConverter.Auth         
+    DEBUG Аутентификация прошла успешно 
+
+2021-06-14 13:24:36.1528  method:  Converter.OneDriveConverter..ctor         
+    INFO Загрузка конфигурации OneDrive 
+
+2021-06-14 13:24:37.4044  method:  Converter.OneDriveConverter.Auth         
+    DEBUG Аутентификация прошла успешно 
+
+2021-06-14 13:25:21.8923  method:  Converter.OneDriveConverter..ctor         
+    INFO Загрузка конфигурации OneDrive 
+
+2021-06-14 13:25:23.3549  method:  Converter.OneDriveConverter.Auth         
+    DEBUG Аутентификация прошла успешно 
+
+2021-06-14 13:26:36.1950  method:  Converter.OneDriveConverter..ctor         
+    INFO Загрузка конфигурации OneDrive 
+
+2021-06-14 13:26:37.3727  method:  Converter.OneDriveConverter.Auth         
+    DEBUG Аутентификация прошла успешно 
+
+2021-06-14 13:27:10.9039  method:  Converter.OneDriveConverter..ctor         
+    INFO Загрузка конфигурации OneDrive 
+
+2021-06-14 13:27:12.2372  method:  Converter.OneDriveConverter.Auth         
+    DEBUG Аутентификация прошла успешно 
+
