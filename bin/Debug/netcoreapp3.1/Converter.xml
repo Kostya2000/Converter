@@ -4,54 +4,64 @@
         <name>Converter</name>
     </assembly>
     <members>
-        <member name="P:Converter.Authentification.Token">
-            <summary>
-            Аутентификация по принципу lazy
-            </summary>
-        </member>
-        <member name="M:Converter.Authentification.#ctor">
-            <summary>
-            Конструктор для загружки из файла конфигурации данных
-            </summary>
-        </member>
-        <member name="M:Converter.Authentification.Auth">
-            <summary>
-            Аутентификация OneDrive
-            </summary>
-            <returns>Токен доступа</returns>
-            <exception cref = "T:System.NullReferenceException">Не удалось аутентифицироваться с OneDrive</exception>
-        </member>
-        <member name="M:Converter.Authentification.ParseToken(System.Net.Http.HttpResponseMessage)">
-            <summary>
-            Парсим ответ от сервера
-            </summary>
-            <param name="responseMessage">Ответ от сервера</param>
-            <returns>Токен доступа</returns>
-            <exception cref="T:System.NullReferenceException">Не удалось аутентифицироваться с OneDrive</exception>
-        </member>
-        <member name="P:Converter.FileFromDisk.Stream">
+        <member name="P:Converter.DiskSource.Stream">
             <summary>
             Геттер и сеттер для потока данных
             </summary>
         </member>
-        <member name="M:Converter.FileFromDisk.Read(System.String)">
+        <member name="P:Converter.DiskSource.Name">
+            <summary>
+            Геттер и сеттер для названия переданного файла
+            </summary>
+        </member>
+        <member name="M:Converter.DiskSource.Read(System.String)">
             <summary>
             Чтение файла из диска
             </summary>
             <param name="fileName"></param>
             <exception cref="T:System.IO.FileNotFoundException">Не удалось найти файл на диске</exception>
         </member>
-        <member name="M:Converter.FileFromDisk.Write">
+        <member name="M:Converter.DiskSource.Write">
             <summary>
             Запись файла на диск
             </summary>
         </member>
-        <member name="M:Converter.FileFromDisk.ReplaceExtension(System.String)">
+        <member name="M:Converter.DiskSource.ReplaceExtension(System.String)">
             <summary>
             меняем расширения файла
             </summary>
             <param name="fileName">Название файла</param>
             <returns>Название файла с расширением pdf</returns>
+        </member>
+        <member name="M:Converter.IOneDriveConnection.LoadingConfiguration">
+            <summary>
+            Загрузка конфигурационных данных
+            </summary>
+        </member>
+        <member name="P:Converter.OneDriveConnection.Token">
+            <summary>
+            Аутентификация по принципу lazy
+            </summary>
+        </member>
+        <member name="M:Converter.OneDriveConnection.#ctor">
+            <summary>
+            Конструктор для загружки из файла конфигурации данных
+            </summary>
+        </member>
+        <member name="M:Converter.OneDriveConnection.Connect">
+            <summary>
+            Соединение с OneDrive
+            </summary>
+            <returns>Токен доступа</returns>
+            <exception cref="T:System.NullReferenceException">Не удалось выполнить запрос на соединение</exception>
+        </member>
+        <member name="M:Converter.OneDriveConnection.ParseResponse(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Парсим ответ от сервера
+            </summary>
+            <param name="responseMessage">Ответ от сервера</param>
+            <returns>Токен доступа</returns>
+            <exception cref="T:System.NullReferenceException">Аутентификация не прошла</exception>
         </member>
         <member name="M:Converter.OneDriveConverter.SendFile(System.IO.Stream)">
             <summary>

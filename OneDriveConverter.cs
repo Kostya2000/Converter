@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net;
 using NLog;
 
 namespace Converter
@@ -7,6 +8,8 @@ namespace Converter
     class OneDriveConverter
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
+        private string guid = null;
+        private Lazy<OneDriveConnection> connection=new Lazy<OneDriveConnection>();
 
         /// <summary>
         /// Отправляем файл на сервер
@@ -22,11 +25,11 @@ namespace Converter
                 logger.Error("Данные из файла не загружены");
                 throw new ArgumentNullException("Данные из файла не загружены");
             }
-            var webHeader = new System.Net.WebHeaderCollection();
-            webHeader.Add("Authorization", "Bearer " + Authentification.Token.ToString());
+            var webHeader = new WebHeaderCollection();
+            webHeader.Add("Authorization", "Bearer " + connection.Value.Token.ToString());
             var graphUrl = $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}:/content";
             
-            var request = System.Net.WebRequest.Create(graphUrl);
+            var request = WebRequest.Create(graphUrl);
             request.Headers = webHeader;
             request.Method = "PUT";
             request.ContentType = "text/plain";
@@ -37,7 +40,7 @@ namespace Converter
                 throw new NullReferenceException("Не удалось подключится к серверу");
             }
             stream.CopyTo(reqStream);
-            using var resp = (System.Net.HttpWebResponse)request.GetResponse();
+            using var resp = (HttpWebResponse)request.GetResponse();
             logger.Info("Файл успешно отправлен на сервер");
         }
 
@@ -48,15 +51,15 @@ namespace Converter
         public Stream GetFile()
         {
             logger.Info("Запрос на загрузку файла из OneDrive");
-            var webHeader = new System.Net.WebHeaderCollection();
-            webHeader.Add("Authorization", "Bearer " + Authentification.Token.ToString());
+            var webHeader = new WebHeaderCollection();
+            webHeader.Add("Authorization", "Bearer " + connection.Value.Token.ToString());
             var graphUrl = $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}:/content?format=pdf";
 
-            var request = System.Net.WebRequest.Create(graphUrl);
+            var request = WebRequest.Create(graphUrl);
             request.Headers = webHeader;
             request.Method = "GET";
             request.ContentType = "pdf/application";
-            var resp = (System.Net.HttpWebResponse)request.GetResponse();
+            var resp = (HttpWebResponse)request.GetResponse();
             if (resp == null)
             {
                 logger.Error("Не удалось подключится к серверу");
@@ -74,13 +77,13 @@ namespace Converter
         public void DeleteFile()
         {
             logger.Info("Запрос на удаление файла из OneDrive");
-            var webHeader = new System.Net.WebHeaderCollection();
-            webHeader.Add("Authorization", "Bearer " + Authentification.Token.ToString());
+            var webHeader = new WebHeaderCollection();
+            webHeader.Add("Authorization", "Bearer " + connection.Value.Token.ToString());
             var graphUrl = $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}";
-            var request = System.Net.WebRequest.Create(graphUrl);
+            var request = WebRequest.Create(graphUrl);
             request.Headers = webHeader;
             request.Method = "DELETE";
-            using var resp = (System.Net.HttpWebResponse)request.GetResponse();
+            using var resp = (HttpWebResponse)request.GetResponse();
             if (resp == null)
             {
                 logger.Error("Не удалось подключится к серверу");
@@ -89,9 +92,6 @@ namespace Converter
             using var stream = resp.GetResponseStream();
             logger.Info("Файл успешно удален с сервера");
         }
-
-        private Authentification Authentification = new Authentification();
-        private string guid = null;
 
         /// <summary>
         /// Генерация guid по принципу lazy

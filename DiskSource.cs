@@ -3,8 +3,11 @@ using System;
 
 namespace Converter
 {
-    class FileFromDisk : IFile
+    class DiskSource : IFile
     {
+        private Stream stream;
+        private string name = null;
+
         /// <summary>
         /// Геттер и сеттер для потока данных
         /// </summary>
@@ -12,6 +15,15 @@ namespace Converter
         {
             get { return stream; }
             set { stream = value; }
+        }
+
+        /// <summary>
+        /// Геттер и сеттер для названия переданного файла
+        /// </summary>
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
         }
 
         /// <summary>
@@ -43,9 +55,6 @@ namespace Converter
             }
         }
 
-        private Stream stream;
-        private string name = null;
-
         /// <summary>
         /// меняем расширения файла
         /// </summary>
@@ -55,10 +64,11 @@ namespace Converter
         {
             if (fileName == null)
             {
-                IFile.logger.Error("Неккоректное название файла");
-                throw new ArgumentNullException("Неккоректное название файла");
+                IFile.logger.Error("Некорректное название файла");
+                throw new ArgumentNullException("Некорректное название файла");
             }
             return fileName.Replace(".docx", ".pdf");
         }
     }
 }
+
