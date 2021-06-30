@@ -50,7 +50,7 @@ namespace Converter
             }
             catch (ArgumentNullException)
             {
-                IFile.logger.Error("Данные из файла не загружены");
+                IFile.logger.Error("При передаче аргумента был передан null");
             }
             catch (UnconnectedException)
             {
@@ -67,6 +67,10 @@ namespace Converter
             catch (AggregateException)
             {
                 IFile.logger.Error("Нет доступа к интернету");
+            }
+            catch (DataNullException)
+            {
+                IFile.logger.Error("Данные из файла не загружены");
             }
         }
     }

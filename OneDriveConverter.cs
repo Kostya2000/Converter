@@ -16,13 +16,13 @@ namespace Converter
         /// </summary>
         /// <param name="stream">Поток данных</param>
         /// <exception cref="UnconnectedException">Не удалось подключиться к серверу</exception>
-        /// <exception cref="ArgumentNullException">"Данные из файла не загружены"</exception>
+        /// <exception cref="DataNullException">"Данные из файла не загружены"</exception>
         public void SendFile(Stream stream)
         {
             logger.Info("Запрос на отправку файла на OneDrive");
             if (stream == null)
             {
-                throw new ArgumentNullException("Данные из файла не загружены");
+                throw new DataNullException("Данные из файла не загружены");
             }
             var webHeader = new WebHeaderCollection();
             webHeader.Add("Authorization", "Bearer " + connection.Value.Token.ToString());

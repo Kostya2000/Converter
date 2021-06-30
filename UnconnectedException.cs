@@ -1,8 +1,8 @@
-﻿using System;
+﻿using System.Net;
 
 namespace Converter
 {
-    class UnconnectedException : System.Net.WebException
+    class UnconnectedException : WebException
     {
         public UnconnectedException(string message = null) 
             : base (message)
