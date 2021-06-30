@@ -31,14 +31,14 @@ namespace Converter
             var request = WebRequest.Create(graphUrl);
             request.Headers = webHeader;
             request.Method = "PUT";
-            request.ContentType = "text/plain";
+            request.ContentType = "multipart/form-data";
             using var reqStream = request.GetRequestStream();
             if (reqStream == null)
             {
                 throw new UnconnectedException("Не удалось подключится к серверу");
             }
             stream.CopyTo(reqStream);
-            using var resp = request.GetResponse() as HttpWebResponse;
+            var resp = request.GetResponse();
             logger.Info("Файл успешно отправлен на сервер");
         }
 
@@ -57,7 +57,7 @@ namespace Converter
             request.Headers = webHeader;
             request.Method = "GET";
             request.ContentType = "pdf/application";
-            var resp = request.GetResponse() as HttpWebResponse;
+            var resp = request.GetResponse();
             if (resp == null)
             {
                throw new UnconnectedException("Не удалось подключится к серверу");

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Converter": {
+      "commandName": "Project",
+      "commandLineArgs": "ИВТ-42-18МСиСЖижайкинРГР.docx"
+    }
+  }
+}

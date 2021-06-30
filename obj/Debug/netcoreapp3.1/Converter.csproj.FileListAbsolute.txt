@@ -60,7 +60,6 @@ C:\Users\Admin\Desktop\Conberter-master\Conberter-master\Converter\bin\Debug\net
 C:\Users\Admin\Desktop\Conberter-master\Conberter-master\Converter\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\Admin\Desktop\Conberter-master\Conberter-master\Converter\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\Admin\Desktop\Conberter-master\Conberter-master\Converter\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-C:\Users\Admin\Desktop\Conberter-master\Conberter-master\Converter\obj\Debug\netcoreapp3.1\Converter.csprojAssemblyReference.cache
 C:\Users\Admin\Desktop\Conberter-master\Conberter-master\Converter\obj\Debug\netcoreapp3.1\Converter.AssemblyInfoInputs.cache
 C:\Users\Admin\Desktop\Conberter-master\Conberter-master\Converter\obj\Debug\netcoreapp3.1\Converter.AssemblyInfo.cs
 C:\Users\Admin\Desktop\Conberter-master\Conberter-master\Converter\obj\Debug\netcoreapp3.1\Converter.csproj.CoreCompileInputs.cache

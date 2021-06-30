@@ -50,6 +50,7 @@ namespace Converter
             using (var file = new FileStream(ReplaceExtension(name), FileMode.Create))
             {
                 stream.CopyTo(file);
+                file.FlushAsync();
                 IFile.logger.Info("Файл успешно загружен на диск");
             }
         }

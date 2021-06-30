@@ -1,45 +1,153 @@
-2021-06-30 11:21:18.8886  method:  Converter.IOneDriveConnection.Init         
+2021-06-30 12:28:20.6782  method:  Converter.IOneDriveConnection.Init         
     INFO Выполняется загрузка конфигурации OneDrive 
 
-2021-06-30 11:21:19.1054  method:  Converter.IOneDriveConnection.Init         
+2021-06-30 12:28:20.9253  method:  Converter.IOneDriveConnection.Init         
     INFO Загрузка конфигурации OneDrive прошла успешно 
 
-2021-06-30 11:21:19.1054  method:  Converter.OneDriveConverterConsole.Main         
+2021-06-30 12:28:20.9253  method:  Converter.OneDriveConverterConsole.Main         
     ERROR Название файла не передано 
 
-2021-06-30 11:21:32.1460  method:  Converter.IOneDriveConnection.Init         
+2021-06-30 12:28:41.3246  method:  Converter.IOneDriveConnection.Init         
     INFO Выполняется загрузка конфигурации OneDrive 
 
-2021-06-30 11:21:32.2815  method:  Converter.IOneDriveConnection.Init         
+2021-06-30 12:28:41.4545  method:  Converter.IOneDriveConnection.Init         
     INFO Загрузка конфигурации OneDrive прошла успешно 
 
-2021-06-30 11:21:32.2848  method:  Converter.DiskSource.Read         
+2021-06-30 12:28:41.4545  method:  Converter.DiskSource.Read         
     INFO Файл успешно загружен из диска 
 
-2021-06-30 11:21:32.2848  method:  Converter.OneDriveConverter.SendFile         
+2021-06-30 12:28:41.4545  method:  Converter.OneDriveConverter.SendFile         
     INFO Запрос на отправку файла на OneDrive 
 
-2021-06-30 11:21:32.2848  method:  Converter.OneDriveConnection.Connect         
+2021-06-30 12:28:41.4545  method:  Converter.OneDriveConnection.Connect         
     INFO Выполняется запрос на соединение с OneDrive 
 
-2021-06-30 11:21:33.1860  method:  Converter.OneDriveConnection.ParseResponse         
+2021-06-30 12:28:42.7210  method:  Converter.OneDriveConnection.ParseResponse         
     DEBUG Аутентификация прошла успешно 
 
-2021-06-30 11:21:38.2856  method:  Converter.OneDriveConverter.SendFile         
+2021-06-30 12:28:44.0962  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
+    ERROR Не удалось подключиться к серверу. Связь потеряна 
+
+2021-06-30 12:37:35.0840  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-06-30 12:37:35.2168  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-06-30 12:37:35.2168  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-06-30 12:37:35.2237  method:  Converter.OneDriveConverter.SendFile         
+    INFO Запрос на отправку файла на OneDrive 
+
+2021-06-30 12:37:35.2237  method:  Converter.OneDriveConnection.Connect         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-06-30 12:37:36.5772  method:  Converter.OneDriveConnection.ParseResponse         
+    DEBUG Аутентификация прошла успешно 
+
+2021-06-30 12:37:42.6073  method:  Converter.OneDriveConverter.SendFile         
     INFO Файл успешно отправлен на сервер 
 
-2021-06-30 11:21:38.2856  method:  Converter.OneDriveConverter.GetFile         
+2021-06-30 12:37:42.6125  method:  Converter.OneDriveConverter.GetFile         
     INFO Запрос на загрузку файла из OneDrive 
 
-2021-06-30 11:21:48.5668  method:  Converter.OneDriveConverter.GetFile         
+2021-06-30 12:38:07.3242  method:  Converter.OneDriveConverter.GetFile         
     INFO Файл успешно загружен из OneDrive 
 
-2021-06-30 11:22:00.4813  method:  Converter.DiskSource.Write         
+2021-06-30 12:38:50.1882  method:  Converter.DiskSource.Write         
     INFO Файл успешно загружен на диск 
 
-2021-06-30 11:22:00.4813  method:  Converter.OneDriveConverter.DeleteFile         
+2021-06-30 12:38:50.1922  method:  Converter.OneDriveConverter.DeleteFile         
     INFO Запрос на удаление файла из OneDrive 
 
-2021-06-30 11:22:01.6936  method:  Converter.OneDriveConverter.DeleteFile         
+2021-06-30 12:38:51.3883  method:  Converter.OneDriveConverter.DeleteFile         
+    INFO Файл успешно удален с сервера 
+
+2021-06-30 12:40:39.3971  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-06-30 12:40:39.5282  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-06-30 12:40:39.5282  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-06-30 12:40:39.5352  method:  Converter.OneDriveConverter.SendFile         
+    INFO Запрос на отправку файла на OneDrive 
+
+2021-06-30 12:40:39.5352  method:  Converter.OneDriveConnection.Connect         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-06-30 12:40:41.0524  method:  Converter.OneDriveConnection.ParseResponse         
+    DEBUG Аутентификация прошла успешно 
+
+2021-06-30 12:40:41.8674  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
+    ERROR Не удалось подключиться к серверу. Связь потеряна 
+
+2021-06-30 12:44:21.1935  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-06-30 12:44:21.4056  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-06-30 12:44:21.4056  method:  Converter.OneDriveConverterConsole.Main         
+    ERROR Название файла не передано 
+
+2021-06-30 12:44:28.4255  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-06-30 12:44:28.5577  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-06-30 12:44:28.5577  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-06-30 12:44:28.5648  method:  Converter.OneDriveConverter.SendFile         
+    INFO Запрос на отправку файла на OneDrive 
+
+2021-06-30 12:44:28.5648  method:  Converter.OneDriveConnection.Connect         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-06-30 12:44:29.7567  method:  Converter.OneDriveConnection.ParseResponse         
+    DEBUG Аутентификация прошла успешно 
+
+2021-06-30 12:44:31.9726  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
+    ERROR Не удалось подключиться к серверу. Связь потеряна 
+
+2021-06-30 12:46:03.2125  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-06-30 12:46:03.3434  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-06-30 12:46:03.3466  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-06-30 12:46:03.3466  method:  Converter.OneDriveConverter.SendFile         
+    INFO Запрос на отправку файла на OneDrive 
+
+2021-06-30 12:46:03.3466  method:  Converter.OneDriveConnection.Connect         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-06-30 12:46:06.1407  method:  Converter.OneDriveConnection.ParseResponse         
+    DEBUG Аутентификация прошла успешно 
+
+2021-06-30 12:46:11.2810  method:  Converter.OneDriveConverter.SendFile         
+    INFO Файл успешно отправлен на сервер 
+
+2021-06-30 12:46:11.2904  method:  Converter.OneDriveConverter.GetFile         
+    INFO Запрос на загрузку файла из OneDrive 
+
+2021-06-30 12:46:37.9988  method:  Converter.OneDriveConverter.GetFile         
+    INFO Файл успешно загружен из OneDrive 
+
+2021-06-30 12:47:49.7955  method:  Converter.DiskSource.Write         
+    INFO Файл успешно загружен на диск 
+
+2021-06-30 12:47:49.7996  method:  Converter.OneDriveConverter.DeleteFile         
+    INFO Запрос на удаление файла из OneDrive 
+
+2021-06-30 12:47:51.1521  method:  Converter.OneDriveConverter.DeleteFile         
     INFO Файл успешно удален с сервера 
 

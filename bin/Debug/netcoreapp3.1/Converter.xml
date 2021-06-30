@@ -65,7 +65,7 @@
             </summary>
             <param name="stream">Поток данных</param>
             <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
-            <exception cref="T:System.ArgumentNullException">"Данные из файла не загружены"</exception>
+            <exception cref="T:Converter.DataNullException">"Данные из файла не загружены"</exception>
         </member>
         <member name="M:Converter.OneDriveConverter.GetFile">
              <summary>
