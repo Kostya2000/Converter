@@ -21,7 +21,7 @@ namespace Converter
         /// Соединение с OneDrive
         /// </summary>
         /// <returns>Токен доступа</returns>
-        /// <exception cref="NullReferenceException">Не удалось выполнить запрос на соединение</exception>
+        /// <exception cref="UnconnectedException">Не удалось подключиться к серверу</exception>
         private JToken Connect()
         {
             var body = new Dictionary<string, string>();
@@ -36,8 +36,7 @@ namespace Converter
             using var responseMessage = httpClient.PostAsync(IOneDriveConnection.urlAuth, encodedBody).Result;
             if (responseMessage == null)
             {
-                IOneDriveConnection.logger.Error("Не удалось выполнить запрос на соединение");
-                throw new NullReferenceException();
+                throw new UnconnectedException();
             }
             return ParseResponse(responseMessage);
         }
@@ -47,7 +46,7 @@ namespace Converter
         /// </summary>
         /// <param name="responseMessage">Ответ от сервера</param>
         /// <returns>Токен доступа</returns>
-        /// <exception cref="NullReferenceException">Аутентификация не прошла</exception>
+        /// <exception cref="UnauthorizedAccessException">Аутентификация не прошла</exception>
         private JToken ParseResponse(HttpResponseMessage responseMessage)
         {
             var JSON = responseMessage.Content.ReadAsStringAsync().Result;
@@ -55,8 +54,7 @@ namespace Converter
             var token = document["access_token"];
             if (token == null)
             {
-                IOneDriveConnection.logger.Error("Аутентификация не прошла");
-                throw new NullReferenceException("Аутентификация не прошла");
+                throw new UnauthorizedAccessException("Аутентификация не прошла");
             }
             IOneDriveConnection.logger.Debug("Аутентификация прошла успешно");
             return token;

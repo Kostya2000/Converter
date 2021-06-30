@@ -32,8 +32,9 @@
             </summary>
             <param name="fileName">Название файла</param>
             <returns>Название файла с расширением pdf</returns>
+            <exception cref="T:System.ArgumentNullException">Некорректное название файла</exception>
         </member>
-        <member name="M:Converter.IOneDriveConnection.LoadingConfiguration">
+        <member name="M:Converter.IOneDriveConnection.Init">
             <summary>
             Загрузка конфигурационных данных
             </summary>
@@ -43,17 +44,12 @@
             Аутентификация по принципу lazy
             </summary>
         </member>
-        <member name="M:Converter.OneDriveConnection.#ctor">
-            <summary>
-            Конструктор для загружки из файла конфигурации данных
-            </summary>
-        </member>
         <member name="M:Converter.OneDriveConnection.Connect">
             <summary>
             Соединение с OneDrive
             </summary>
             <returns>Токен доступа</returns>
-            <exception cref="T:System.NullReferenceException">Не удалось выполнить запрос на соединение</exception>
+            <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
         </member>
         <member name="M:Converter.OneDriveConnection.ParseResponse(System.Net.Http.HttpResponseMessage)">
             <summary>
@@ -61,32 +57,43 @@
             </summary>
             <param name="responseMessage">Ответ от сервера</param>
             <returns>Токен доступа</returns>
-            <exception cref="T:System.NullReferenceException">Аутентификация не прошла</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Аутентификация не прошла</exception>
         </member>
         <member name="M:Converter.OneDriveConverter.SendFile(System.IO.Stream)">
             <summary>
             Отправляем файл на сервер
             </summary>
             <param name="stream">Поток данных</param>
-            <exception cref="T:System.NullReferenceException">Не удалось подключится к серверу</exception>
+            <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
             <exception cref="T:System.ArgumentNullException">"Данные из файла не загружены"</exception>
         </member>
         <member name="M:Converter.OneDriveConverter.GetFile">
              <summary>
              Получаем файл с сервера
              </summary>
-            <exception cref="T:System.NullReferenceException">Не удалось подключится к серверу</exception>
+            <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
         </member>
         <member name="M:Converter.OneDriveConverter.DeleteFile">
             <summary>
             Удаляем файла с сервера
             </summary>
-            <exception cref="T:System.NullReferenceException">Не удалось подключится к серверу</exception>
+            <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
         </member>
         <member name="P:Converter.OneDriveConverter.GUID">
             <summary>
             Генерация guid по принципу lazy
             </summary>
+        </member>
+        <member name="M:Converter.OneDriveConverterConsole.Init">
+            <summary>
+            Загрузка данных из конфигурации
+            </summary>
+        </member>
+        <member name="M:Converter.OneDriveConverterConsole.ConvertFileFromDiskSource(System.String)">
+            <summary>
+            Конвертируем файл из диска
+            </summary>
+            <param name="fileName"></param>
         </member>
     </members>
 </doc>

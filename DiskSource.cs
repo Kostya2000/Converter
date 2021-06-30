@@ -36,8 +36,7 @@ namespace Converter
             name = fileName;
             if (!File.Exists(fileName))
             {
-                IFile.logger.Error("Файл не найден");
-                throw new FileNotFoundException("Файл не найден");
+               throw new FileNotFoundException("Файл не найден");
             }
             stream = File.OpenRead(fileName);
             IFile.logger.Info("Файл успешно загружен из диска");
@@ -60,11 +59,11 @@ namespace Converter
         /// </summary>
         /// <param name="fileName">Название файла</param>
         /// <returns>Название файла с расширением pdf</returns>
+        /// <exception cref="ArgumentNullException">Некорректное название файла</exception>
         private string ReplaceExtension(string fileName)
         {
             if (fileName == null)
             {
-                IFile.logger.Error("Некорректное название файла");
                 throw new ArgumentNullException("Некорректное название файла");
             }
             return fileName.Replace(".docx", ".pdf");

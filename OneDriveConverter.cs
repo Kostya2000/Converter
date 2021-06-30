@@ -15,14 +15,13 @@ namespace Converter
         /// Отправляем файл на сервер
         /// </summary>
         /// <param name="stream">Поток данных</param>
-        /// <exception cref="NullReferenceException">Не удалось подключится к серверу</exception>
+        /// <exception cref="UnconnectedException">Не удалось подключиться к серверу</exception>
         /// <exception cref="ArgumentNullException">"Данные из файла не загружены"</exception>
         public void SendFile(Stream stream)
         {
             logger.Info("Запрос на отправку файла на OneDrive");
             if (stream == null)
             {
-                logger.Error("Данные из файла не загружены");
                 throw new ArgumentNullException("Данные из файла не загружены");
             }
             var webHeader = new WebHeaderCollection();
@@ -36,18 +35,17 @@ namespace Converter
             using var reqStream = request.GetRequestStream();
             if (reqStream == null)
             {
-                logger.Error("Не удалось подключится к серверу");
-                throw new NullReferenceException("Не удалось подключится к серверу");
+                throw new UnconnectedException("Не удалось подключится к серверу");
             }
             stream.CopyTo(reqStream);
-            using var resp = (HttpWebResponse)request.GetResponse();
+            using var resp = request.GetResponse() as HttpWebResponse;
             logger.Info("Файл успешно отправлен на сервер");
         }
 
         /// <summary>
         /// Получаем файл с сервера
         /// </summary>
-        ///<exception cref="NullReferenceException">Не удалось подключится к серверу</exception>
+        ///<exception cref="UnconnectedException">Не удалось подключиться к серверу</exception>
         public Stream GetFile()
         {
             logger.Info("Запрос на загрузку файла из OneDrive");
@@ -59,11 +57,10 @@ namespace Converter
             request.Headers = webHeader;
             request.Method = "GET";
             request.ContentType = "pdf/application";
-            var resp = (HttpWebResponse)request.GetResponse();
+            var resp = request.GetResponse() as HttpWebResponse;
             if (resp == null)
             {
-                logger.Error("Не удалось подключится к серверу");
-                throw new NullReferenceException("Не удалось подключится к серверу");
+               throw new UnconnectedException("Не удалось подключится к серверу");
             }
             var stream = resp.GetResponseStream();
             logger.Info("Файл успешно загружен из OneDrive");
@@ -73,7 +70,7 @@ namespace Converter
         /// <summary>
         /// Удаляем файла с сервера
         /// </summary>
-        /// <exception cref="NullReferenceException">Не удалось подключится к серверу</exception>
+        /// <exception cref="UnconnectedException">Не удалось подключиться к серверу</exception>
         public void DeleteFile()
         {
             logger.Info("Запрос на удаление файла из OneDrive");
@@ -83,11 +80,10 @@ namespace Converter
             var request = WebRequest.Create(graphUrl);
             request.Headers = webHeader;
             request.Method = "DELETE";
-            using var resp = (HttpWebResponse)request.GetResponse();
+            using var resp = request.GetResponse() as HttpWebResponse;
             if (resp == null)
             {
-                logger.Error("Не удалось подключится к серверу");
-                throw new NullReferenceException("Не удалось подключится к серверу");
+                throw new UnconnectedException("Не удалось подключится к серверу");
             }
             using var stream = resp.GetResponseStream();
             logger.Info("Файл успешно удален с сервера");
