@@ -70,13 +70,13 @@ namespace Converter
                 
                 request.ContentType = "multipart/form-data";
 
-                using var reqStream2 = request.GetRequestStream();
-                if (reqStream2 == null)
+                using var reqStream = request.GetRequestStream();
+                if (reqStream == null)
                 {
                     throw new UnconnectedException("Не удалось подключится к серверу");
                 }
 
-                stream.CopyTo(reqStream2, pushSize);
+                stream.CopyTo(reqStream, pushSize);
                 using var resp = request.GetResponse();
                 if (temporarySize + pushSize >= stream.Length)
                 {
@@ -101,12 +101,12 @@ namespace Converter
                 request.Method = "PUT";
                 request.ContentType = "multipart/form-data";
 
-                using var reqStream2 = request.GetRequestStream();
-                if (reqStream2 == null)
+                using var reqStream = request.GetRequestStream();
+                if (reqStream == null)
                 {
                     throw new UnconnectedException("Не удалось подключится к серверу");
                 }
-                stream.CopyTo(reqStream2);
+                stream.CopyTo(reqStream);
                 using var resp = request.GetResponse();
             }
             logger.Info("Файл успешно передан на сервера");

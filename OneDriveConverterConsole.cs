@@ -12,20 +12,13 @@ namespace Converter
         static void Main(string[] args)
         {
             Init();
-            IFile file = new DiskSource();
-            IOneDriveConverter driveConverter = new OneDriveConverter();
-            file.Read("Экономика.docx");
-            driveConverter.SendFile((file as DiskSource).Stream);
-            (file as DiskSource).Stream = (driveConverter as OneDriveConverter).GetFile();
-            (file as DiskSource).Name = "ЭКОНОМИКА2.docx";
-            file.Write();
             if (args.Length < 1)
             {
                 var logger = LogManager.GetCurrentClassLogger();
                 logger.Error("Название файла не передано");
                 throw new ArgumentNullException("Название файла не передано");
             }
-           // ConvertFileFromDiskSource(args[0]);
+            ConvertFileFromDiskSource(args[0]);
         }
 
         /// <summary>
