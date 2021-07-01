@@ -1,4 +1,5 @@
 ﻿using System.Configuration;
+using System.IO;
 using NLog;
 
 namespace Converter
@@ -23,5 +24,6 @@ namespace Converter
             urlAuth = $"https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token";
             logger.Info("Загрузка конфигурации OneDrive прошла успешно");
         }
+
     }
 }

@@ -1,22 +1,32 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 using NLog;
 
 namespace Converter
 {
     class OneDriveConverterConsole
     {
+        static Logger logger = LogManager.GetCurrentClassLogger();
         static void Main(string[] args)
         {
             Init();
-            if (args.Length<1)
+            IFile file = new DiskSource();
+            IOneDriveConverter driveConverter = new OneDriveConverter();
+            logger.Info("начало");
+            file.Read("КОСТЯ.docx");
+            driveConverter.SendFile((file as DiskSource).Stream);
+            (file as DiskSource).Stream = (driveConverter as OneDriveConverter).GetFile();
+            (file as DiskSource).Name = "ЭКОНОМИКА.docx";
+            file.Write();
+            if (args.Length < 1)
             {
                 var logger = LogManager.GetCurrentClassLogger();
                 logger.Error("Название файла не передано");
                 throw new ArgumentNullException("Название файла не передано");
             }
-            ConvertFileFromDiskSource(args[0]);
+           // ConvertFileFromDiskSource(args[0]);
         }
 
         /// <summary>
@@ -34,15 +44,15 @@ namespace Converter
         /// <param name="fileName"></param>
         static void ConvertFileFromDiskSource(string fileName)
         {
-            var driveConverter = new OneDriveConverter();
+            IOneDriveConverter driveConverter = new OneDriveConverter();
             IFile file = new DiskSource();
             try
             {
                 file.Read(fileName);
                 driveConverter.SendFile((file as DiskSource).Stream);
-                (file as DiskSource).Stream = driveConverter.GetFile();
+                (file as DiskSource).Stream = (driveConverter as OneDriveConverter).GetFile();
                 file.Write();
-                driveConverter.DeleteFile();
+                (driveConverter as OneDriveConverter).DeleteFile();
             }
             catch (FileNotFoundException)
             {
@@ -71,6 +81,10 @@ namespace Converter
             catch (DataNullException)
             {
                 IFile.logger.Error("Данные из файла не загружены");
+            }
+            catch (HttpRequestException)
+            {
+                IFile.logger.Error("Неправильный запрос к серверу");
             }
         }
     }

@@ -67,3 +67,4 @@ C:\Users\Admin\Desktop\Conberter-master\Conberter-master\Converter\obj\Debug\net
 C:\Users\Admin\Desktop\Conberter-master\Conberter-master\Converter\obj\Debug\netcoreapp3.1\Converter.dll
 C:\Users\Admin\Desktop\Conberter-master\Conberter-master\Converter\obj\Debug\netcoreapp3.1\Converter.pdb
 C:\Users\Admin\Desktop\Conberter-master\Conberter-master\Converter\obj\Debug\netcoreapp3.1\Converter.genruntimeconfig.cache
+C:\Users\Admin\Desktop\Conberter-master\Conberter-master\Converter\obj\Debug\netcoreapp3.1\Converter.csprojAssemblyReference.cache

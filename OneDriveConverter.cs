@@ -5,19 +5,20 @@ using NLog;
 
 namespace Converter
 {
-    class OneDriveConverter
+    class OneDriveConverter : IOneDriveConverter
     {
+        private const int pushSize = 327680;
         private static Logger logger = LogManager.GetCurrentClassLogger();
         private string guid = null;
         private Lazy<OneDriveConnection> connection=new Lazy<OneDriveConnection>();
 
         /// <summary>
-        /// Отправляем файл на сервер
+        /// Отправляем файл с размером меньше 4 МБ на сервер
         /// </summary>
         /// <param name="stream">Поток данных</param>
         /// <exception cref="UnconnectedException">Не удалось подключиться к серверу</exception>
         /// <exception cref="DataNullException">"Данные из файла не загружены"</exception>
-        public void SendFile(Stream stream)
+        public void SendSmallFile(Stream stream)
         {
             logger.Info("Запрос на отправку файла на OneDrive");
             if (stream == null)
@@ -43,6 +44,72 @@ namespace Converter
         }
 
         /// <summary>
+        /// Отправляем файл с размром больше 4 МБ на сервер
+        /// </summary>
+        /// <param name="stream">Поток данных</param>
+        /// <exception cref="UnconnectedException">Не удалось подключиться к серверу</exception>
+        public void SendLargeFile(Stream stream)
+        {
+            logger.Info("Запрос на отправку большого файла на OneDrive");
+            var connection = new OneDriveConnection();
+            int temporarySize = 0;
+            int counter = 0;
+            var webHeader = new WebHeaderCollection();
+            while (temporarySize + pushSize < stream.Length - 1)
+            {
+                Console.WriteLine("Content-Range" + "bytes " + (temporarySize).ToString() + "-" + (temporarySize + pushSize - 1).ToString() + "/" + (stream.Length).ToString());
+                webHeader.Add("Authorization", "Bearer " + connection.Token.ToString());
+                webHeader.Add("Content-Length", pushSize.ToString());
+                webHeader.Add("Content-Range", "bytes " + (temporarySize).ToString() + "-" + (temporarySize + pushSize - 1).ToString() + "/" + (stream.Length).ToString());
+
+                var request = WebRequest.Create(connection.UploadUrl(GUID).ToString());
+                request.Headers = webHeader;
+                request.Method = "PUT";
+                request.ContentType = "multipart/form-data";
+
+                using var reqStream2 = request.GetRequestStream();
+                if (reqStream2 == null)
+                {
+                    throw new UnconnectedException("Не удалось подключится к серверу");
+                }
+
+                stream.CopyTo(reqStream2, pushSize);
+                var resp = request.GetResponse();
+                if (temporarySize + pushSize >= stream.Length)
+                {
+                    stream.Position = temporarySize + 1;
+                    break;
+                }
+                stream.Position = temporarySize + pushSize;
+                temporarySize += pushSize;
+                Console.WriteLine(++counter);
+                webHeader.Clear();
+            }
+            webHeader.Clear();
+            if (temporarySize != stream.Length - 1)
+            {
+                Console.WriteLine("Content-Range" + "bytes " + (temporarySize).ToString() + "-" + (stream.Length - 1).ToString() + "/" + (stream.Length).ToString());
+                webHeader.Add("Authorization", "Bearer " + connection.Token.ToString());
+                webHeader.Add("Content-Length", (stream.Length - temporarySize).ToString());
+                webHeader.Add("Content-Range", "bytes " + (temporarySize).ToString() + "-" + (stream.Length - 1).ToString() + "/" + (stream.Length).ToString());
+
+                var request = WebRequest.Create(connection.UploadUrl(GUID).ToString());
+                request.Headers = webHeader;
+                request.Method = "PUT";
+                request.ContentType = "multipart/form-data";
+
+                using var reqStream2 = request.GetRequestStream();
+                if (reqStream2 == null)
+                {
+                    throw new UnconnectedException("Не удалось подключится к серверу");
+                }
+                stream.CopyTo(reqStream2);
+                var resp = request.GetResponse();
+            }
+            logger.Info("Файл успешно удален с сервера");
+        }
+
+        /// <summary>
         /// Получаем файл с сервера
         /// </summary>
         ///<exception cref="UnconnectedException">Не удалось подключиться к серверу</exception>
@@ -50,7 +117,8 @@ namespace Converter
         {
             logger.Info("Запрос на загрузку файла из OneDrive");
             var webHeader = new WebHeaderCollection();
-            webHeader.Add("Authorization", "Bearer " + connection.Value.Token.ToString());
+            var connect = new OneDriveConnection();
+            webHeader.Add("Authorization", "Bearer " + connect.Token.ToString());
             var graphUrl = $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}:/content?format=pdf";
 
             var request = WebRequest.Create(graphUrl);

@@ -39,19 +39,45 @@
             Загрузка конфигурационных данных
             </summary>
         </member>
+        <member name="M:Converter.IOneDriveConverter.SendLargeFile(System.IO.Stream)">
+            <summary>
+            Отправляем файл размером больше 4МБ 
+            </summary>
+            <param name="stream">Поток данных</param>
+        </member>
+        <member name="M:Converter.IOneDriveConverter.SendSmallFile(System.IO.Stream)">
+            <summary>
+            Отправляем файл размером меньше 4МБ 
+            </summary>
+            <param name="stream">Поток данных</param>
+        </member>
+        <member name="M:Converter.IOneDriveConverter.SendFile(System.IO.Stream,System.Int32)">
+            <summary>
+            Определяем запрос для отправки файла
+            </summary>
+            <param name="stream">Поток данных</param>
+            <param name="sizeStream">[Необязательный параметр] Размер файла</param>
+        </member>
         <member name="P:Converter.OneDriveConnection.Token">
             <summary>
             Аутентификация по принципу lazy
             </summary>
         </member>
-        <member name="M:Converter.OneDriveConnection.Connect">
+        <member name="M:Converter.OneDriveConnection.UploadUrl(System.String)">
+            <summary>
+            Получаем ресурс для отправки диапозонов байт
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Converter.OneDriveConnection.GetToken">
             <summary>
             Соединение с OneDrive
             </summary>
             <returns>Токен доступа</returns>
             <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
         </member>
-        <member name="M:Converter.OneDriveConnection.ParseResponse(System.Net.Http.HttpResponseMessage)">
+        <member name="M:Converter.OneDriveConnection.ParseToken(System.Net.Http.HttpResponseMessage)">
             <summary>
             Парсим ответ от сервера
             </summary>
@@ -59,13 +85,35 @@
             <returns>Токен доступа</returns>
             <exception cref="T:System.UnauthorizedAccessException">Аутентификация не прошла</exception>
         </member>
-        <member name="M:Converter.OneDriveConverter.SendFile(System.IO.Stream)">
+        <member name="M:Converter.OneDriveConnection.GetUploadUrl(System.String)">
             <summary>
-            Отправляем файл на сервер
+            Запрос на получение ресурса для отправки большого файла
+            </summary>
+            <returns>Url адрес ресурса</returns>
+            <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
+        </member>
+        <member name="M:Converter.OneDriveConnection.ParseUploadUrl(System.IO.StreamReader)">
+            <summary>
+            Парсим ответ от сервера
+            </summary>
+            <param name="responseMessage">Ответ от сервера</param>
+            <returns>Url адрес ресурса</returns>
+            <exception cref="T:System.Net.Http.HttpRequestException">Неправильный запрос к серверу</exception>
+        </member>
+        <member name="M:Converter.OneDriveConverter.SendSmallFile(System.IO.Stream)">
+            <summary>
+            Отправляем файл с размером меньше 4 МБ на сервер
             </summary>
             <param name="stream">Поток данных</param>
             <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
             <exception cref="T:Converter.DataNullException">"Данные из файла не загружены"</exception>
+        </member>
+        <member name="M:Converter.OneDriveConverter.SendLargeFile(System.IO.Stream)">
+            <summary>
+            Отправляем файл с размром больше 4 МБ на сервер
+            </summary>
+            <param name="stream">Поток данных</param>
+            <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
         </member>
         <member name="M:Converter.OneDriveConverter.GetFile">
              <summary>

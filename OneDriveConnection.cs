@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Net;
 using System.Collections.Generic;
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
@@ -8,13 +10,24 @@ namespace Converter
     class OneDriveConnection : IOneDriveConnection
     {
         private JToken token;
+        private JToken uploadUrl;
 
         /// <summary>
         /// Аутентификация по принципу lazy
         /// </summary>
         public JToken Token
         {
-            get { return token ??= Connect(); }
+            get { return token ??= GetToken(); }
+        }
+
+        /// <summary>
+        /// Получаем ресурс для отправки диапозонов байт
+        /// </summary>
+        /// <param name="guid"></param>
+        /// <returns></returns>
+        public JToken UploadUrl(string guid)
+        {
+           return uploadUrl ??= GetUploadUrl(guid); 
         }
 
         /// <summary>
@@ -22,7 +35,7 @@ namespace Converter
         /// </summary>
         /// <returns>Токен доступа</returns>
         /// <exception cref="UnconnectedException">Не удалось подключиться к серверу</exception>
-        private JToken Connect()
+        private JToken GetToken()
         {
             var body = new Dictionary<string, string>();
             body.Add("client_id", IOneDriveConnection.client_id);
@@ -38,7 +51,7 @@ namespace Converter
             {
                 throw new UnconnectedException();
             }
-            return ParseResponse(responseMessage);
+            return ParseToken(responseMessage);
         }
 
         /// <summary>
@@ -47,7 +60,7 @@ namespace Converter
         /// <param name="responseMessage">Ответ от сервера</param>
         /// <returns>Токен доступа</returns>
         /// <exception cref="UnauthorizedAccessException">Аутентификация не прошла</exception>
-        private JToken ParseResponse(HttpResponseMessage responseMessage)
+        private JToken ParseToken(HttpResponseMessage responseMessage)
         {
             var JSON = responseMessage.Content.ReadAsStringAsync().Result;
             var document = JObject.Parse(JSON);
@@ -58,6 +71,45 @@ namespace Converter
             }
             IOneDriveConnection.logger.Debug("Аутентификация прошла успешно");
             return token;
+        }
+
+        /// <summary>
+        /// Запрос на получение ресурса для отправки большого файла
+        /// </summary>
+        /// <returns>Url адрес ресурса</returns>
+        /// <exception cref="UnconnectedException">Не удалось подключиться к серверу</exception>
+        private JToken GetUploadUrl(string guid)
+        {
+            IOneDriveConnection.logger.Info("Выполняется запрос на получение URL с OneDrive");
+            var graphUrl = $"https://graph.microsoft.com/v1.0/drive/root:/{guid}:/createUploadSession";       
+            var request = WebRequest.Create(graphUrl) as HttpWebRequest;
+            request.Method = "POST";
+            request.Headers["Authorization"] = "Bearer " + Token.ToString();
+            var response = request.GetResponse() as HttpWebResponse;
+            var responseStream = new StreamReader(response.GetResponseStream());
+            if (responseStream == null)
+            {
+                throw new UnconnectedException("Не удалось подключиться к серверу");
+            }
+            return ParseUploadUrl(responseStream);
+        }
+
+        /// <summary>
+        /// Парсим ответ от сервера
+        /// </summary>
+        /// <param name="responseMessage">Ответ от сервера</param>
+        /// <returns>Url адрес ресурса</returns>
+        /// <exception cref="HttpRequestException">Неправильный запрос к серверу</exception>
+        private JToken ParseUploadUrl(StreamReader responseMessage)
+        {
+            var responseString = responseMessage.ReadToEnd();
+            var document = JObject.Parse(responseString);
+            var uploadUrl = document["uploadUrl"];
+            if (uploadUrl == null)
+            {
+                throw new HttpRequestException("Неправильный запрос к серверу");
+            }
+            return uploadUrl;
         }
     }
 }
