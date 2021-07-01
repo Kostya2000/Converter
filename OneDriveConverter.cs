@@ -55,6 +55,7 @@ namespace Converter
             int temporarySize = 0;
             int counter = 0;
             var webHeader = new WebHeaderCollection();
+
             logger.Info("Отправка фрагментов:");
             while (temporarySize + pushSize < stream.Length - 1)
             {
@@ -66,6 +67,7 @@ namespace Converter
                 var request = WebRequest.Create(connection.UploadUrl(GUID).ToString());
                 request.Headers = webHeader;
                 request.Method = "PUT";
+                
                 request.ContentType = "multipart/form-data";
 
                 using var reqStream2 = request.GetRequestStream();
@@ -75,7 +77,7 @@ namespace Converter
                 }
 
                 stream.CopyTo(reqStream2, pushSize);
-                var resp = request.GetResponse();
+                using var resp = request.GetResponse();
                 if (temporarySize + pushSize >= stream.Length)
                 {
                     stream.Position = temporarySize + 1;
@@ -105,7 +107,7 @@ namespace Converter
                     throw new UnconnectedException("Не удалось подключится к серверу");
                 }
                 stream.CopyTo(reqStream2);
-                var resp = request.GetResponse();
+                using var resp = request.GetResponse();
             }
             logger.Info("Файл успешно передан на сервера");
         }
@@ -114,7 +116,7 @@ namespace Converter
         /// Получаем файл с сервера
         /// </summary>
         ///<exception cref="UnconnectedException">Не удалось подключиться к серверу</exception>
-        public Stream GetFile()
+        public  Stream GetFile()
         {
             logger.Info("Запрос на загрузку файла из OneDrive");
             var webHeader = new WebHeaderCollection();

@@ -1,24 +1,219 @@
-2021-07-01 13:19:26.8928  method:  Converter.IOneDriveConnection.Init         
+2021-07-01 14:46:59.7898  method:  Converter.IOneDriveConnection.Init         
     INFO Выполняется загрузка конфигурации OneDrive 
 
-2021-07-01 13:19:27.1100  method:  Converter.IOneDriveConnection.Init         
+2021-07-01 14:46:59.9653  method:  Converter.IOneDriveConnection.Init         
     INFO Загрузка конфигурации OneDrive прошла успешно 
 
-2021-07-01 13:19:27.1127  method:  Converter.OneDriveConverterConsole.Main         
-    INFO начало 
-
-2021-07-01 13:19:27.1127  method:  Converter.DiskSource.Read         
+2021-07-01 14:46:59.9653  method:  Converter.DiskSource.Read         
     INFO Файл успешно загружен из диска 
 
-2021-07-01 13:19:27.1510  method:  Converter.OneDriveConverter.SendLargeFile         
+2021-07-01 14:46:59.9653  method:  Converter.IOneDriveConverter.SendFile         
+    DEBUG Определение запроса для отправки файла... 
+
+2021-07-01 14:47:00.0044  method:  Converter.OneDriveConverter.SendLargeFile         
     INFO Запрос на отправку большого файла на OneDrive 
 
-2021-07-01 13:19:27.1723  method:  Converter.OneDriveConnection.GetToken         
+2021-07-01 14:47:00.0044  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка фрагментов: 
+
+2021-07-01 14:47:00.0044  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 1Content-Range bytes 0-327679/14607066 
+
+2021-07-01 14:47:00.0299  method:  Converter.OneDriveConnection.GetToken         
     INFO Выполняется запрос на соединение с OneDrive 
 
-2021-07-01 13:19:28.3535  method:  Converter.OneDriveConnection.ParseToken         
+2021-07-01 14:47:01.3067  method:  Converter.OneDriveConnection.ParseToken         
     DEBUG Аутентификация прошла успешно 
 
-2021-07-01 13:19:28.3535  method:  Converter.OneDriveConnection.GetUploadUrl         
+2021-07-01 14:47:01.3147  method:  Converter.OneDriveConnection.GetUploadUrl         
     INFO Выполняется запрос на получение URL с OneDrive 
+
+2021-07-01 14:47:02.5328  method:  Converter.OneDriveConnection.ParseUploadUrl         
+    DEBUG Url адрес ресурса получен успешно 
+
+2021-07-01 14:48:41.5691  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-01 14:48:41.7477  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-01 14:48:41.7477  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-07-01 14:48:41.7477  method:  Converter.IOneDriveConverter.SendFile         
+    DEBUG Определение запроса для отправки файла... 
+
+2021-07-01 14:48:41.7858  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Запрос на отправку большого файла на OneDrive 
+
+2021-07-01 14:48:41.7858  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка фрагментов: 
+
+2021-07-01 14:48:41.7858  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 1Content-Range bytes 0-327679/14607066 
+
+2021-07-01 14:48:41.8097  method:  Converter.OneDriveConnection.GetToken         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-07-01 14:48:43.3233  method:  Converter.OneDriveConnection.ParseToken         
+    DEBUG Аутентификация прошла успешно 
+
+2021-07-01 14:48:43.3233  method:  Converter.OneDriveConnection.GetUploadUrl         
+    INFO Выполняется запрос на получение URL с OneDrive 
+
+2021-07-01 14:48:45.2194  method:  Converter.OneDriveConnection.ParseUploadUrl         
+    DEBUG Url адрес ресурса получен успешно 
+
+2021-07-01 14:49:11.9758  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 2Content-Range bytes 327680-655359/14607066 
+
+2021-07-01 14:49:30.7720  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 3Content-Range bytes 655360-983039/14607066 
+
+2021-07-01 14:49:45.1667  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 4Content-Range bytes 983040-1310719/14607066 
+
+2021-07-01 14:50:06.7626  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 5Content-Range bytes 1310720-1638399/14607066 
+
+2021-07-01 14:50:25.9133  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 6Content-Range bytes 1638400-1966079/14607066 
+
+2021-07-01 14:50:43.6167  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 7Content-Range bytes 1966080-2293759/14607066 
+
+2021-07-01 14:51:09.4615  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 8Content-Range bytes 2293760-2621439/14607066 
+
+2021-07-01 14:51:28.7957  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 9Content-Range bytes 2621440-2949119/14607066 
+
+2021-07-01 14:51:43.6399  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 10Content-Range bytes 2949120-3276799/14607066 
+
+2021-07-01 14:52:05.3309  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 11Content-Range bytes 3276800-3604479/14607066 
+
+2021-07-01 14:52:23.6817  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 12Content-Range bytes 3604480-3932159/14607066 
+
+2021-07-01 14:52:36.9786  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 13Content-Range bytes 3932160-4259839/14607066 
+
+2021-07-01 14:52:49.5099  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 14Content-Range bytes 4259840-4587519/14607066 
+
+2021-07-01 14:53:03.6260  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 15Content-Range bytes 4587520-4915199/14607066 
+
+2021-07-01 14:53:14.4829  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 16Content-Range bytes 4915200-5242879/14607066 
+
+2021-07-01 14:53:25.6197  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 17Content-Range bytes 5242880-5570559/14607066 
+
+2021-07-01 14:53:42.5750  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 18Content-Range bytes 5570560-5898239/14607066 
+
+2021-07-01 14:53:53.6711  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 19Content-Range bytes 5898240-6225919/14607066 
+
+2021-07-01 14:54:07.9789  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 20Content-Range bytes 6225920-6553599/14607066 
+
+2021-07-01 14:54:18.1803  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 21Content-Range bytes 6553600-6881279/14607066 
+
+2021-07-01 14:54:28.3831  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 22Content-Range bytes 6881280-7208959/14607066 
+
+2021-07-01 14:54:41.5635  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 23Content-Range bytes 7208960-7536639/14607066 
+
+2021-07-01 14:54:53.1806  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 24Content-Range bytes 7536640-7864319/14607066 
+
+2021-07-01 14:55:04.0340  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 25Content-Range bytes 7864320-8191999/14607066 
+
+2021-07-01 14:55:12.3828  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 26Content-Range bytes 8192000-8519679/14607066 
+
+2021-07-01 14:55:20.2712  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 27Content-Range bytes 8519680-8847359/14607066 
+
+2021-07-01 14:55:27.4898  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 28Content-Range bytes 8847360-9175039/14607066 
+
+2021-07-01 14:55:39.7675  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 29Content-Range bytes 9175040-9502719/14607066 
+
+2021-07-01 14:55:50.6501  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 30Content-Range bytes 9502720-9830399/14607066 
+
+2021-07-01 14:55:58.4463  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 31Content-Range bytes 9830400-10158079/14607066 
+
+2021-07-01 14:56:07.1727  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 32Content-Range bytes 10158080-10485759/14607066 
+
+2021-07-01 14:56:12.6627  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 33Content-Range bytes 10485760-10813439/14607066 
+
+2021-07-01 14:56:20.8073  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 34Content-Range bytes 10813440-11141119/14607066 
+
+2021-07-01 14:56:26.2531  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 35Content-Range bytes 11141120-11468799/14607066 
+
+2021-07-01 14:56:31.4309  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 36Content-Range bytes 11468800-11796479/14607066 
+
+2021-07-01 14:56:37.7666  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 37Content-Range bytes 11796480-12124159/14607066 
+
+2021-07-01 14:56:42.3296  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 38Content-Range bytes 12124160-12451839/14607066 
+
+2021-07-01 14:56:49.2840  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 39Content-Range bytes 12451840-12779519/14607066 
+
+2021-07-01 14:56:54.4552  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 40Content-Range bytes 12779520-13107199/14607066 
+
+2021-07-01 14:56:58.1677  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 41Content-Range bytes 13107200-13434879/14607066 
+
+2021-07-01 14:57:02.1798  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 42Content-Range bytes 13434880-13762559/14607066 
+
+2021-07-01 14:57:07.1897  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 43Content-Range bytes 13762560-14090239/14607066 
+
+2021-07-01 14:57:15.4810  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 44Content-Range bytes 14090240-14417919/14607066 
+
+2021-07-01 14:57:17.5229  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка последнего фрагмента: 
+
+2021-07-01 14:57:17.5229  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Content-Range bytes 14417920-14607065/14607066 
+
+2021-07-01 14:57:21.7292  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Файл успешно передан на сервера 
+
+2021-07-01 14:58:26.0418  method:  Converter.OneDriveConverter.GetFile         
+    INFO Запрос на загрузку файла из OneDrive 
+
+2021-07-01 14:58:26.0418  method:  Converter.OneDriveConnection.GetToken         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-07-01 14:58:27.0173  method:  Converter.OneDriveConnection.ParseToken         
+    DEBUG Аутентификация прошла успешно 
+
+2021-07-01 14:58:32.0654  method:  Converter.OneDriveConverter.GetFile         
+    INFO Файл успешно загружен из OneDrive 
+
+2021-07-01 14:59:14.5883  method:  Converter.DiskSource.Write         
+    INFO Файл успешно загружен на диск 
 
