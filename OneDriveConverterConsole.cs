@@ -14,11 +14,10 @@ namespace Converter
             Init();
             IFile file = new DiskSource();
             IOneDriveConverter driveConverter = new OneDriveConverter();
-            logger.Info("начало");
-            file.Read("КОСТЯ.docx");
+            file.Read("Экономика.docx");
             driveConverter.SendFile((file as DiskSource).Stream);
             (file as DiskSource).Stream = (driveConverter as OneDriveConverter).GetFile();
-            (file as DiskSource).Name = "ЭКОНОМИКА.docx";
+            (file as DiskSource).Name = "ЭКОНОМИКА2.docx";
             file.Write();
             if (args.Length < 1)
             {

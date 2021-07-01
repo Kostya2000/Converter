@@ -24,6 +24,7 @@ namespace Converter
         /// <param name="sizeStream">[Необязательный параметр] Размер файла</param>
         public void SendFile(Stream stream, int sizeStream = 0)
         {
+            IOneDriveConnection.logger.Debug("Определение запроса для отправки файла...");
             if (sizeStream > MaxFilesize || stream.Length > MaxFilesize)
             {
                 SendLargeFile(stream);

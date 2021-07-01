@@ -55,9 +55,10 @@ namespace Converter
             int temporarySize = 0;
             int counter = 0;
             var webHeader = new WebHeaderCollection();
+            logger.Info("Отправка фрагментов:");
             while (temporarySize + pushSize < stream.Length - 1)
             {
-                Console.WriteLine("Content-Range" + "bytes " + (temporarySize).ToString() + "-" + (temporarySize + pushSize - 1).ToString() + "/" + (stream.Length).ToString());
+                logger.Info((++counter).ToString()+"Content-Range " + "bytes " + (temporarySize).ToString() + "-" + (temporarySize + pushSize - 1).ToString() + "/" + (stream.Length).ToString());
                 webHeader.Add("Authorization", "Bearer " + connection.Token.ToString());
                 webHeader.Add("Content-Length", pushSize.ToString());
                 webHeader.Add("Content-Range", "bytes " + (temporarySize).ToString() + "-" + (temporarySize + pushSize - 1).ToString() + "/" + (stream.Length).ToString());
@@ -82,13 +83,13 @@ namespace Converter
                 }
                 stream.Position = temporarySize + pushSize;
                 temporarySize += pushSize;
-                Console.WriteLine(++counter);
                 webHeader.Clear();
             }
             webHeader.Clear();
+            logger.Info("Отправка последнего фрагмента:");
             if (temporarySize != stream.Length - 1)
             {
-                Console.WriteLine("Content-Range" + "bytes " + (temporarySize).ToString() + "-" + (stream.Length - 1).ToString() + "/" + (stream.Length).ToString());
+                logger.Info("Content-Range " + "bytes " + (temporarySize).ToString() + "-" + (stream.Length - 1).ToString() + "/" + (stream.Length).ToString());
                 webHeader.Add("Authorization", "Bearer " + connection.Token.ToString());
                 webHeader.Add("Content-Length", (stream.Length - temporarySize).ToString());
                 webHeader.Add("Content-Range", "bytes " + (temporarySize).ToString() + "-" + (stream.Length - 1).ToString() + "/" + (stream.Length).ToString());
@@ -106,7 +107,7 @@ namespace Converter
                 stream.CopyTo(reqStream2);
                 var resp = request.GetResponse();
             }
-            logger.Info("Файл успешно удален с сервера");
+            logger.Info("Файл успешно передан на сервера");
         }
 
         /// <summary>

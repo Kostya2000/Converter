@@ -109,6 +109,7 @@ namespace Converter
             {
                 throw new HttpRequestException("Неправильный запрос к серверу");
             }
+            IOneDriveConnection.logger.Debug("Url адрес ресурса получен успешно");
             return uploadUrl;
         }
     }

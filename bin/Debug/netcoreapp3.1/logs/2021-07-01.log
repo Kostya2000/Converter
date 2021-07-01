@@ -1,0 +1,24 @@
+2021-07-01 13:19:26.8928  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-01 13:19:27.1100  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-01 13:19:27.1127  method:  Converter.OneDriveConverterConsole.Main         
+    INFO начало 
+
+2021-07-01 13:19:27.1127  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-07-01 13:19:27.1510  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Запрос на отправку большого файла на OneDrive 
+
+2021-07-01 13:19:27.1723  method:  Converter.OneDriveConnection.GetToken         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-07-01 13:19:28.3535  method:  Converter.OneDriveConnection.ParseToken         
+    DEBUG Аутентификация прошла успешно 
+
+2021-07-01 13:19:28.3535  method:  Converter.OneDriveConnection.GetUploadUrl         
+    INFO Выполняется запрос на получение URL с OneDrive 
+
