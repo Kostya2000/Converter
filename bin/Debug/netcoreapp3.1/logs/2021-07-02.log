@@ -661,3 +661,576 @@
 2021-07-02 11:24:39.6899  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
     ERROR Не удалось подключиться к серверу. Связь потеряна 
 
+2021-07-02 11:28:50.3935  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-02 11:28:50.5783  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-02 11:28:50.5964  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-07-02 11:28:50.5964  method:  Converter.OneDriveConverter.SendFile         
+    DEBUG Определение запроса для отправки файла... 
+
+2021-07-02 11:28:50.5964  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Запрос на отправку большого файла на OneDrive 
+
+2021-07-02 11:28:50.5964  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка фрагментов: 
+
+2021-07-02 11:28:50.5964  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка последнего фрагмента: 
+
+2021-07-02 11:28:50.5964  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Content-Range bytes 0-11869/11870 
+
+2021-07-02 11:28:50.6343  method:  Converter.OneDriveConnection.GetUploadUrl         
+    INFO Выполняется запрос на получение URL с OneDrive 
+
+2021-07-02 11:28:50.6343  method:  Converter.OneDriveConnection.GetToken         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-07-02 11:28:52.1122  method:  Converter.OneDriveConnection.ParseToken         
+    DEBUG Аутентификация прошла успешно 
+
+2021-07-02 11:28:53.1545  method:  Converter.OneDriveConnection.ParseUploadUrl         
+    DEBUG Url адрес ресурса получен успешно 
+
+2021-07-02 11:30:02.7621  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
+    ERROR Не удалось подключиться к серверу. Связь потеряна 
+
+2021-07-02 11:30:10.6413  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-02 11:30:10.8540  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-02 11:30:10.8710  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-07-02 11:30:10.8803  method:  Converter.OneDriveConverter.SendFile         
+    DEBUG Определение запроса для отправки файла... 
+
+2021-07-02 11:30:10.8803  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Запрос на отправку большого файла на OneDrive 
+
+2021-07-02 11:30:10.8803  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка фрагментов: 
+
+2021-07-02 11:30:10.8803  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка последнего фрагмента: 
+
+2021-07-02 11:30:10.8803  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Content-Range bytes 0-11869/11870 
+
+2021-07-02 11:30:10.9166  method:  Converter.OneDriveConnection.GetUploadUrl         
+    INFO Выполняется запрос на получение URL с OneDrive 
+
+2021-07-02 11:30:10.9260  method:  Converter.OneDriveConnection.GetToken         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-07-02 11:30:12.2662  method:  Converter.OneDriveConnection.ParseToken         
+    DEBUG Аутентификация прошла успешно 
+
+2021-07-02 11:30:13.3454  method:  Converter.OneDriveConnection.ParseUploadUrl         
+    DEBUG Url адрес ресурса получен успешно 
+
+2021-07-02 11:31:18.6172  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
+    ERROR Не удалось подключиться к серверу. Связь потеряна 
+
+2021-07-02 11:52:25.1525  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-02 11:52:25.3621  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-02 11:52:25.3963  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-07-02 11:52:25.3963  method:  Converter.OneDriveConverter.SendFile         
+    DEBUG Определение запроса для отправки файла... 
+
+2021-07-02 11:52:25.4086  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Запрос на отправку большого файла на OneDrive 
+
+2021-07-02 11:52:25.4086  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка фрагментов: 
+
+2021-07-02 11:52:25.4086  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка последнего фрагмента: 
+
+2021-07-02 11:52:25.4086  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Content-Range bytes 0-11869/11870 
+
+2021-07-02 11:52:25.4367  method:  Converter.OneDriveConnection.GetUploadUrl         
+    INFO Выполняется запрос на получение URL с OneDrive 
+
+2021-07-02 11:52:25.4448  method:  Converter.OneDriveConnection.GetToken         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-07-02 11:52:26.5818  method:  Converter.OneDriveConnection.ParseToken         
+    DEBUG Аутентификация прошла успешно 
+
+2021-07-02 11:52:28.4684  method:  Converter.OneDriveConnection.ParseUploadUrl         
+    DEBUG Url адрес ресурса получен успешно 
+
+2021-07-02 11:53:37.6698  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
+    ERROR Не удалось подключиться к серверу. Связь потеряна 
+
+2021-07-02 11:53:47.8288  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-02 11:53:48.0154  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-02 11:53:48.0325  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-07-02 11:53:48.0325  method:  Converter.OneDriveConverter.SendFile         
+    DEBUG Определение запроса для отправки файла... 
+
+2021-07-02 11:53:48.0325  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Запрос на отправку большого файла на OneDrive 
+
+2021-07-02 11:53:48.0420  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка фрагментов: 
+
+2021-07-02 11:53:48.0420  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка последнего фрагмента: 
+
+2021-07-02 11:53:48.0420  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Content-Range bytes 0-11869/11870 
+
+2021-07-02 11:53:48.0651  method:  Converter.OneDriveConnection.GetUploadUrl         
+    INFO Выполняется запрос на получение URL с OneDrive 
+
+2021-07-02 11:53:48.0651  method:  Converter.OneDriveConnection.GetToken         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-07-02 11:53:49.5559  method:  Converter.OneDriveConnection.ParseToken         
+    DEBUG Аутентификация прошла успешно 
+
+2021-07-02 11:53:51.2138  method:  Converter.OneDriveConnection.ParseUploadUrl         
+    DEBUG Url адрес ресурса получен успешно 
+
+2021-07-02 11:56:11.8566  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-02 11:56:12.0634  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-02 11:56:12.0931  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-07-02 11:56:12.1173  method:  Converter.OneDriveConverter.SendFile         
+    DEBUG Определение запроса для отправки файла... 
+
+2021-07-02 11:56:12.1173  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Запрос на отправку большого файла на OneDrive 
+
+2021-07-02 11:56:12.1173  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка фрагментов: 
+
+2021-07-02 11:56:12.1173  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка последнего фрагмента: 
+
+2021-07-02 11:56:12.1173  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Content-Range bytes 0-11869/11870 
+
+2021-07-02 11:56:12.1658  method:  Converter.OneDriveConnection.GetUploadUrl         
+    INFO Выполняется запрос на получение URL с OneDrive 
+
+2021-07-02 11:56:12.1658  method:  Converter.OneDriveConnection.GetToken         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-07-02 11:56:13.7786  method:  Converter.OneDriveConnection.ParseToken         
+    DEBUG Аутентификация прошла успешно 
+
+2021-07-02 11:56:16.9548  method:  Converter.OneDriveConnection.ParseUploadUrl         
+    DEBUG Url адрес ресурса получен успешно 
+
+2021-07-02 11:57:26.4447  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
+    ERROR Не удалось подключиться к серверу. Связь потеряна 
+
+2021-07-02 11:57:40.9457  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-02 11:57:41.1352  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-02 11:57:41.1587  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-07-02 11:57:41.1587  method:  Converter.OneDriveConverter.SendFile         
+    DEBUG Определение запроса для отправки файла... 
+
+2021-07-02 11:57:41.1587  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Запрос на отправку большого файла на OneDrive 
+
+2021-07-02 11:57:41.1725  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка фрагментов: 
+
+2021-07-02 11:57:41.1725  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка последнего фрагмента: 
+
+2021-07-02 11:57:41.1725  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Content-Range bytes 0-11869/11870 
+
+2021-07-02 11:57:41.2081  method:  Converter.OneDriveConnection.GetUploadUrl         
+    INFO Выполняется запрос на получение URL с OneDrive 
+
+2021-07-02 11:57:41.2081  method:  Converter.OneDriveConnection.GetToken         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-07-02 11:57:43.5110  method:  Converter.OneDriveConnection.ParseToken         
+    DEBUG Аутентификация прошла успешно 
+
+2021-07-02 11:57:44.9568  method:  Converter.OneDriveConnection.ParseUploadUrl         
+    DEBUG Url адрес ресурса получен успешно 
+
+2021-07-02 11:59:25.6063  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
+    ERROR Не удалось подключиться к серверу. Связь потеряна 
+
+2021-07-02 12:01:59.7679  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-02 12:01:59.9583  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-02 12:01:59.9824  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-07-02 12:01:59.9824  method:  Converter.OneDriveConverter.SendFile         
+    DEBUG Определение запроса для отправки файла... 
+
+2021-07-02 12:01:59.9949  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Запрос на отправку большого файла на OneDrive 
+
+2021-07-02 12:01:59.9949  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка фрагментов: 
+
+2021-07-02 12:01:59.9949  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка последнего фрагмента: 
+
+2021-07-02 12:01:59.9949  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Content-Range bytes 0-11869/11870 
+
+2021-07-02 12:02:00.0381  method:  Converter.OneDriveConnection.GetUploadUrl         
+    INFO Выполняется запрос на получение URL с OneDrive 
+
+2021-07-02 12:02:00.0461  method:  Converter.OneDriveConnection.GetToken         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-07-02 12:02:01.3349  method:  Converter.OneDriveConnection.ParseToken         
+    DEBUG Аутентификация прошла успешно 
+
+2021-07-02 12:02:02.5502  method:  Converter.OneDriveConnection.ParseUploadUrl         
+    DEBUG Url адрес ресурса получен успешно 
+
+2021-07-02 12:02:05.8132  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Файл успешно передан на сервера 
+
+2021-07-02 12:02:05.8173  method:  Converter.OneDriveConverter.GetFile         
+    INFO Запрос на загрузку файла из OneDrive 
+
+2021-07-02 12:02:07.9640  method:  Converter.OneDriveConverter.GetFile         
+    INFO Файл успешно загружен из OneDrive 
+
+2021-07-02 12:02:07.9640  method:  Converter.OneDriveConverter.DeleteFile         
+    INFO Запрос на удаление файла из OneDrive 
+
+2021-07-02 12:02:08.9300  method:  Converter.OneDriveConverter.DeleteFile         
+    INFO Файл успешно удален с сервера 
+
+2021-07-02 12:02:08.9300  method:  Converter.DiskSource.Write         
+    INFO Файл успешно загружен на диск 
+
+2021-07-02 12:02:52.4331  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-02 12:02:52.5592  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-02 12:02:52.5592  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-07-02 12:02:52.5592  method:  Converter.OneDriveConverter.SendFile         
+    DEBUG Определение запроса для отправки файла... 
+
+2021-07-02 12:02:52.5666  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Запрос на отправку большого файла на OneDrive 
+
+2021-07-02 12:02:52.5666  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка фрагментов: 
+
+2021-07-02 12:02:52.5666  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 1Content-Range bytes 0-327679/3204556 
+
+2021-07-02 12:02:52.5666  method:  Converter.OneDriveConnection.GetUploadUrl         
+    INFO Выполняется запрос на получение URL с OneDrive 
+
+2021-07-02 12:02:52.5666  method:  Converter.OneDriveConnection.GetToken         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-07-02 12:02:53.8819  method:  Converter.OneDriveConnection.ParseToken         
+    DEBUG Аутентификация прошла успешно 
+
+2021-07-02 12:02:55.0455  method:  Converter.OneDriveConnection.ParseUploadUrl         
+    DEBUG Url адрес ресурса получен успешно 
+
+2021-07-02 12:03:01.8747  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 2Content-Range bytes 327680-655359/3204556 
+
+2021-07-02 12:03:09.5542  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 3Content-Range bytes 655360-983039/3204556 
+
+2021-07-02 12:03:14.9550  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 4Content-Range bytes 983040-1310719/3204556 
+
+2021-07-02 12:03:28.3309  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 5Content-Range bytes 1310720-1638399/3204556 
+
+2021-07-02 12:03:33.1951  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 6Content-Range bytes 1638400-1966079/3204556 
+
+2021-07-02 12:03:36.0317  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 7Content-Range bytes 1966080-2293759/3204556 
+
+2021-07-02 12:03:42.3772  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 8Content-Range bytes 2293760-2621439/3204556 
+
+2021-07-02 12:03:44.4876  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 9Content-Range bytes 2621440-2949119/3204556 
+
+2021-07-02 12:03:46.6209  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка последнего фрагмента: 
+
+2021-07-02 12:03:46.6209  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Content-Range bytes 2949120-3204555/3204556 
+
+2021-07-02 12:03:50.9549  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Файл успешно передан на сервера 
+
+2021-07-02 12:03:50.9549  method:  Converter.OneDriveConverter.GetFile         
+    INFO Запрос на загрузку файла из OneDrive 
+
+2021-07-02 12:04:20.6003  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
+    ERROR Не удалось подключиться к серверу. Связь потеряна 
+
+2021-07-02 12:04:45.2216  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-02 12:04:45.3494  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-02 12:04:45.3494  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-07-02 12:04:45.3494  method:  Converter.OneDriveConverter.SendFile         
+    DEBUG Определение запроса для отправки файла... 
+
+2021-07-02 12:04:45.3494  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Запрос на отправку большого файла на OneDrive 
+
+2021-07-02 12:04:45.3494  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка фрагментов: 
+
+2021-07-02 12:04:45.3494  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 1Content-Range bytes 0-327679/3204556 
+
+2021-07-02 12:04:45.3614  method:  Converter.OneDriveConnection.GetUploadUrl         
+    INFO Выполняется запрос на получение URL с OneDrive 
+
+2021-07-02 12:04:45.3614  method:  Converter.OneDriveConnection.GetToken         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-07-02 12:04:46.7164  method:  Converter.OneDriveConnection.ParseToken         
+    DEBUG Аутентификация прошла успешно 
+
+2021-07-02 12:04:48.0410  method:  Converter.OneDriveConnection.ParseUploadUrl         
+    DEBUG Url адрес ресурса получен успешно 
+
+2021-07-02 12:04:53.9845  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 2Content-Range bytes 327680-655359/3204556 
+
+2021-07-02 12:05:04.8496  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 3Content-Range bytes 655360-983039/3204556 
+
+2021-07-02 12:05:12.6042  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 4Content-Range bytes 983040-1310719/3204556 
+
+2021-07-02 12:05:20.1793  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 5Content-Range bytes 1310720-1638399/3204556 
+
+2021-07-02 12:05:29.1779  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 6Content-Range bytes 1638400-1966079/3204556 
+
+2021-07-02 12:05:32.9438  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 7Content-Range bytes 1966080-2293759/3204556 
+
+2021-07-02 12:05:36.8189  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 8Content-Range bytes 2293760-2621439/3204556 
+
+2021-07-02 12:05:42.7578  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 9Content-Range bytes 2621440-2949119/3204556 
+
+2021-07-02 12:05:46.9232  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка последнего фрагмента: 
+
+2021-07-02 12:05:46.9232  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Content-Range bytes 2949120-3204555/3204556 
+
+2021-07-02 12:05:51.7118  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Файл успешно передан на сервера 
+
+2021-07-02 12:05:51.7118  method:  Converter.OneDriveConverter.GetFile         
+    INFO Запрос на загрузку файла из OneDrive 
+
+2021-07-02 12:06:21.9702  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
+    ERROR Не удалось подключиться к серверу. Связь потеряна 
+
+2021-07-02 12:06:52.9745  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-02 12:06:53.1013  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-02 12:06:53.1054  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-07-02 12:06:53.1054  method:  Converter.OneDriveConverter.SendFile         
+    DEBUG Определение запроса для отправки файла... 
+
+2021-07-02 12:06:53.1054  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Запрос на отправку большого файла на OneDrive 
+
+2021-07-02 12:06:53.1054  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка фрагментов: 
+
+2021-07-02 12:06:53.1054  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 1Content-Range bytes 0-327679/3204556 
+
+2021-07-02 12:06:53.1054  method:  Converter.OneDriveConnection.GetUploadUrl         
+    INFO Выполняется запрос на получение URL с OneDrive 
+
+2021-07-02 12:06:53.1198  method:  Converter.OneDriveConnection.GetToken         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-07-02 12:06:55.0110  method:  Converter.OneDriveConnection.ParseToken         
+    DEBUG Аутентификация прошла успешно 
+
+2021-07-02 12:06:56.5190  method:  Converter.OneDriveConnection.ParseUploadUrl         
+    DEBUG Url адрес ресурса получен успешно 
+
+2021-07-02 12:07:04.5028  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 2Content-Range bytes 327680-655359/3204556 
+
+2021-07-02 12:07:14.2199  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 3Content-Range bytes 655360-983039/3204556 
+
+2021-07-02 12:07:23.8285  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 4Content-Range bytes 983040-1310719/3204556 
+
+2021-07-02 12:07:30.3895  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 5Content-Range bytes 1310720-1638399/3204556 
+
+2021-07-02 12:07:33.3565  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 6Content-Range bytes 1638400-1966079/3204556 
+
+2021-07-02 12:07:37.0502  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 7Content-Range bytes 1966080-2293759/3204556 
+
+2021-07-02 12:07:40.7429  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 8Content-Range bytes 2293760-2621439/3204556 
+
+2021-07-02 12:07:45.0196  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 9Content-Range bytes 2621440-2949119/3204556 
+
+2021-07-02 12:07:47.2169  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка последнего фрагмента: 
+
+2021-07-02 12:07:47.2169  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Content-Range bytes 2949120-3204555/3204556 
+
+2021-07-02 12:07:53.9161  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Файл успешно передан на сервера 
+
+2021-07-02 12:07:53.9161  method:  Converter.OneDriveConverter.GetFile         
+    INFO Запрос на загрузку файла из OneDrive 
+
+2021-07-02 12:08:25.6738  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
+    ERROR Не удалось подключиться к серверу. Связь потеряна 
+
+2021-07-02 12:09:30.5818  method:  Converter.IOneDriveConnection.Init         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-02 12:09:30.8312  method:  Converter.IOneDriveConnection.Init         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-02 12:09:30.8742  method:  Converter.DiskSource.Read         
+    INFO Файл успешно загружен из диска 
+
+2021-07-02 12:09:30.8742  method:  Converter.OneDriveConverter.SendFile         
+    DEBUG Определение запроса для отправки файла... 
+
+2021-07-02 12:09:30.8891  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Запрос на отправку большого файла на OneDrive 
+
+2021-07-02 12:09:30.8891  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка фрагментов: 
+
+2021-07-02 12:09:30.8891  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 1Content-Range bytes 0-327679/3204556 
+
+2021-07-02 12:09:30.9252  method:  Converter.OneDriveConnection.GetUploadUrl         
+    INFO Выполняется запрос на получение URL с OneDrive 
+
+2021-07-02 12:09:30.9252  method:  Converter.OneDriveConnection.GetToken         
+    INFO Выполняется запрос на соединение с OneDrive 
+
+2021-07-02 12:09:32.6318  method:  Converter.OneDriveConnection.ParseToken         
+    DEBUG Аутентификация прошла успешно 
+
+2021-07-02 12:09:33.8084  method:  Converter.OneDriveConnection.ParseUploadUrl         
+    DEBUG Url адрес ресурса получен успешно 
+
+2021-07-02 12:09:43.6443  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 2Content-Range bytes 327680-655359/3204556 
+
+2021-07-02 12:10:00.0812  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 3Content-Range bytes 655360-983039/3204556 
+
+2021-07-02 12:10:08.4979  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 4Content-Range bytes 983040-1310719/3204556 
+
+2021-07-02 12:10:17.9615  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 5Content-Range bytes 1310720-1638399/3204556 
+
+2021-07-02 12:10:38.5215  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 6Content-Range bytes 1638400-1966079/3204556 
+
+2021-07-02 12:10:44.4212  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 7Content-Range bytes 1966080-2293759/3204556 
+
+2021-07-02 12:10:50.2676  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 8Content-Range bytes 2293760-2621439/3204556 
+
+2021-07-02 12:10:53.8269  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO 9Content-Range bytes 2621440-2949119/3204556 
+
+2021-07-02 12:10:56.3969  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Отправка последнего фрагмента: 
+
+2021-07-02 12:10:56.3969  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Content-Range bytes 2949120-3204555/3204556 
+
+2021-07-02 12:10:59.6261  method:  Converter.OneDriveConverter.SendLargeFile         
+    INFO Файл успешно передан на сервера 
+
+2021-07-02 12:10:59.6261  method:  Converter.OneDriveConverter.GetFile         
+    INFO Запрос на загрузку файла из OneDrive 
+
+2021-07-02 12:11:31.1107  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
+    ERROR Не удалось подключиться к серверу. Связь потеряна 
+

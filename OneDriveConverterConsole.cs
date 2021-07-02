@@ -24,7 +24,7 @@ namespace Converter
         /// <summary>
         /// Загрузка данных из конфигурации
         /// </summary>
-        static void Init()
+        private static void Init()
         {
             IOneDriveConnection connection = new OneDriveConnection();
             connection.Init();
@@ -34,7 +34,7 @@ namespace Converter
         /// Конвертируем файл из диска
         /// </summary>
         /// <param name="fileName"></param>
-        static void ConvertFileFromDiskSource(string fileName)
+        private static void ConvertFileFromDiskSource(string fileName)
         {
             var driveConverter = new OneDriveConverter();
             IFile file = new DiskSource();

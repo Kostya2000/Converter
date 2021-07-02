@@ -36,11 +36,10 @@ namespace Converter
             }
             WebRequest request;
             var reqStream = Stream.Null;
-            connection.Value.Connector(ref reqStream, out request, "PUT", $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}:/content", "multipart/form-data");
+            connection.Value.Connector(ref reqStream, out request, "PUT", $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}:/content", "multipart/form-data", true);
             stream.CopyTo(reqStream);
             var resp = request.GetResponse();
             logger.Info("Файл успешно отправлен на сервер");
-            reqStream.Dispose();
         }
 
         /// <summary>
@@ -78,15 +77,13 @@ namespace Converter
         private void SendFrame(ref Stream stream, int beginPosition, long endPosition)
         {
             WebHeaderCollection webHeader = new WebHeaderCollection();
-            webHeader.Add("Content-Length", pushSize.ToString());
+            webHeader.Add("Content-Length", (endPosition-beginPosition+1).ToString());
             webHeader.Add("Content-Range", "bytes " + (beginPosition).ToString() + "-" + (endPosition).ToString() + "/" + (stream.Length).ToString());
             var reqStream = Stream.Null;
             WebRequest request;
-            connection.Value.Connector(ref reqStream, out request, "PUT", connection.Value.UploadUrl(GUID).ToString(), "multipart/form-data", webHeader);
+            connection.Value.Connector(ref reqStream, out request, "PUT", connection.Value.UploadUrl(GUID).ToString(), "multipart/form-data", true, webHeader);
             stream.CopyTo(reqStream, pushSize);
             var resp = request.GetResponse();
-            webHeader.Clear();
-            reqStream.Dispose();
         }
 
         /// <summary>
@@ -99,7 +96,6 @@ namespace Converter
             var reqStream = Stream.Null;
             WebRequest request;
             connection.Value.Connector(ref reqStream, out request, "GET", $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}:/content?format=pdf", "pdf/application");
-            reqStream.Close();
             var resp = request.GetResponse();
             if (resp == null)
             {
@@ -107,7 +103,6 @@ namespace Converter
             }
             var stream = resp.GetResponseStream();
             logger.Info("Файл успешно загружен из OneDrive");
-            reqStream.Dispose();
             return stream;
         }
 
@@ -121,14 +116,12 @@ namespace Converter
             var reqStream = Stream.Null;
             WebRequest request;
             connection.Value.Connector(ref reqStream, out request, "DELETE", $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}", null);
-            reqStream.Close();
             using var resp = request.GetResponse() as HttpWebResponse;
             if (resp == null)
             {
                 throw new UnconnectedException("Не удалось подключится к серверу");
             }
             using var stream = resp.GetResponseStream();
-            reqStream.Dispose();
             logger.Info("Файл успешно удален с сервера");
         }
 

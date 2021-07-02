@@ -8,6 +8,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>C:\Users\Admin\Desktop\Converter\Converter\Converter.xml</DocumentationFile>
+    <Optimize>true</Optimize>
   </PropertyGroup>
 
   <ItemGroup>
