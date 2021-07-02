@@ -1,6 +1,4 @@
-﻿using NLog;
-
-namespace Converter
+﻿namespace Converter
 {
     interface IFile : IReadFile, IWriteFile
     {

@@ -1,6 +1,4 @@
 ﻿using System.Configuration;
-using System.IO;
-using NLog;
 
 namespace Converter
 {
