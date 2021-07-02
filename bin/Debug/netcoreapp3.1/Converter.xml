@@ -39,25 +39,6 @@
             Загрузка конфигурационных данных
             </summary>
         </member>
-        <member name="M:Converter.IOneDriveConverter.SendLargeFile(System.IO.Stream)">
-            <summary>
-            Отправляем файл размером больше 4МБ 
-            </summary>
-            <param name="stream">Поток данных</param>
-        </member>
-        <member name="M:Converter.IOneDriveConverter.SendSmallFile(System.IO.Stream)">
-            <summary>
-            Отправляем файл размером меньше 4МБ 
-            </summary>
-            <param name="stream">Поток данных</param>
-        </member>
-        <member name="M:Converter.IOneDriveConverter.SendFile(System.IO.Stream,System.Int32)">
-            <summary>
-            Определяем запрос для отправки файла
-            </summary>
-            <param name="stream">Поток данных</param>
-            <param name="sizeStream">[Необязательный параметр] Размер файла</param>
-        </member>
         <member name="P:Converter.OneDriveConnection.Token">
             <summary>
             Аутентификация по принципу lazy
@@ -121,11 +102,18 @@
              </summary>
             <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
         </member>
-        <member name="M:Converter.OneDriveConverter.DeleteFile">
+        <member name="M:Converter.OneDriveConverter.DeleteFile(System.Net.WebHeaderCollection[])">
             <summary>
             Удаляем файла с сервера
             </summary>
             <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
+        </member>
+        <member name="M:Converter.OneDriveConverter.SendFile(System.IO.Stream,System.Int32)">
+            <summary>
+            Определяем запрос для отправки файла
+            </summary>
+            <param name="stream">Поток данных</param>
+            <param name="sizeStream">[Необязательный параметр] Размер файла</param>
         </member>
         <member name="P:Converter.OneDriveConverter.GUID">
             <summary>

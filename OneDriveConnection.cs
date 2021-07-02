@@ -12,6 +12,30 @@ namespace Converter
         private JToken token;
         private JToken uploadUrl;
 
+        public void Connector(ref Stream reqStream, out WebRequest request, string method, string graphUrl, string contentType, WebHeaderCollection header = null)
+        {
+            if (header == null)
+            {
+                header = new WebHeaderCollection();
+            }
+            header.Add("Authorization", "Bearer " + Token.ToString());
+            request = WebRequest.Create(graphUrl);
+            request.Headers = header;
+            request.Method = method;
+            request.ContentType = contentType;
+            switch (method)
+            {
+                case "GET": return;
+                case "DELETE": return;
+                case "POST": return;
+            }
+            reqStream = request.GetRequestStream();
+            if (reqStream == null)
+            {
+                throw new UnconnectedException("Не удалось подключится к серверу");
+            }
+        }
+
         /// <summary>
         /// Аутентификация по принципу lazy
         /// </summary>
@@ -81,10 +105,19 @@ namespace Converter
         private JToken GetUploadUrl(string guid)
         {
             IOneDriveConnection.logger.Info("Выполняется запрос на получение URL с OneDrive");
-            var graphUrl = $"https://graph.microsoft.com/v1.0/drive/root:/{guid}:/createUploadSession";       
-            var request = WebRequest.Create(graphUrl) as HttpWebRequest;
-            request.Method = "POST";
-            request.Headers["Authorization"] = "Bearer " + Token.ToString();
+            //var graphUrl = $"https://graph.microsoft.com/v1.0/drive/root:/{guid}:/createUploadSession";       
+            //var request = WebRequest.Create(graphUrl) as HttpWebRequest;
+            //request.Method = "POST";
+            //request.Headers["Authorization"] = "Bearer " + Token.ToString();
+            //var response = request.GetResponse() as HttpWebResponse;
+            //var responseStream = new StreamReader(response.GetResponseStream());
+            //if (responseStream == null)
+            //{
+            //    throw new UnconnectedException("Не удалось подключиться к серверу");
+            //}
+            var reqStream = Stream.Null;
+            WebRequest request;
+            Connector(ref reqStream, out request, "POST", $"https://graph.microsoft.com/v1.0/drive/root:/{guid}:/createUploadSession",null);
             var response = request.GetResponse() as HttpWebResponse;
             var responseStream = new StreamReader(response.GetResponseStream());
             if (responseStream == null)
@@ -112,5 +145,7 @@ namespace Converter
             IOneDriveConnection.logger.Debug("Url адрес ресурса получен успешно");
             return uploadUrl;
         }
+        
+        
     }
 }

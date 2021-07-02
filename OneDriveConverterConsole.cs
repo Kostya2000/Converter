@@ -36,15 +36,13 @@ namespace Converter
         /// <param name="fileName"></param>
         static void ConvertFileFromDiskSource(string fileName)
         {
-            IOneDriveConverter driveConverter = new OneDriveConverter();
+            var driveConverter = new OneDriveConverter();
             IFile file = new DiskSource();
             try
             {
                 file.Read(fileName);
-                driveConverter.SendFile((file as DiskSource).Stream);
-                (file as DiskSource).Stream = (driveConverter as OneDriveConverter).GetFile();
+                (file as DiskSource).Stream = driveConverter.Converter((file as DiskSource).Stream);
                 file.Write();
-                (driveConverter as OneDriveConverter).DeleteFile();
             }
             catch (FileNotFoundException)
             {
