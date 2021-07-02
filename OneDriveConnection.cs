@@ -11,6 +11,11 @@ namespace Converter
     {
         private JToken token;
         private JToken uploadUrl;
+        private readonly ILogger logger;
+        public OneDriveConnection(ILogger logger)
+        {
+            this.logger = logger;
+        }
 
         public void Connector(ref Stream reqStream, out WebRequest request, string method, string graphUrl, string contentType, bool returnReqStream = false, WebHeaderCollection header = null)
         {
@@ -20,6 +25,7 @@ namespace Converter
             }
             header.Add("Authorization", "Bearer " + Token.ToString());
             request = WebRequest.Create(graphUrl);
+            request.Timeout=60000;
             request.Headers = header;
             request.Method = method;
             request.ContentType = contentType;
@@ -30,6 +36,7 @@ namespace Converter
             reqStream = request.GetRequestStream();
             if (reqStream == null)
             {
+                logger.Error("Не удалось подключится к серверу");
                 throw new UnconnectedException("Не удалось подключится к серверу");
             }
         }
@@ -66,7 +73,7 @@ namespace Converter
             body.Add("client_secret", IOneDriveConnection.client_secret);
 
             using var encodedBody = new FormUrlEncodedContent(body);
-            IOneDriveConnection.logger.Info("Выполняется запрос на соединение с OneDrive");
+            logger.Info("Выполняется запрос на соединение с OneDrive");
             using var httpClient = new HttpClient();
             using var responseMessage = httpClient.PostAsync(IOneDriveConnection.urlAuth, encodedBody).Result;
             if (responseMessage == null)
@@ -91,7 +98,7 @@ namespace Converter
             {
                 throw new UnauthorizedAccessException("Аутентификация не прошла");
             }
-            IOneDriveConnection.logger.Debug("Аутентификация прошла успешно");
+            logger.Debug("Аутентификация прошла успешно");
             return token;
         }
 
@@ -102,7 +109,7 @@ namespace Converter
         /// <exception cref="UnconnectedException">Не удалось подключиться к серверу</exception>
         private JToken GetUploadUrl(string guid)
         {
-            IOneDriveConnection.logger.Info("Выполняется запрос на получение URL с OneDrive");
+            logger.Info("Выполняется запрос на получение URL с OneDrive");
             var reqStream = Stream.Null;
             WebRequest request;
             Connector(ref reqStream, out request, "POST", $"https://graph.microsoft.com/v1.0/drive/root:/{guid}:/createUploadSession",null);
@@ -130,7 +137,7 @@ namespace Converter
             {
                 throw new HttpRequestException("Неправильный запрос к серверу");
             }
-            IOneDriveConnection.logger.Debug("Url адрес ресурса получен успешно");
+            logger.Debug("Url адрес ресурса получен успешно");
             return uploadUrl;
         }  
     }

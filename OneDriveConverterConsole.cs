@@ -8,7 +8,7 @@ namespace Converter
 {
     class OneDriveConverterConsole
     {
-        static Logger logger = LogManager.GetCurrentClassLogger();
+        static ILogger logger = new NLog();
         static void Main(string[] args)
         {
             Init();
@@ -26,8 +26,8 @@ namespace Converter
         /// </summary>
         private static void Init()
         {
-            IOneDriveConnection connection = new OneDriveConnection();
-            connection.Init();
+            IOneDriveConnection connection = new OneDriveConnection(logger);
+            connection.Init(logger);
         }
 
         /// <summary>
@@ -36,8 +36,8 @@ namespace Converter
         /// <param name="fileName"></param>
         private static void ConvertFileFromDiskSource(string fileName)
         {
-            var driveConverter = new OneDriveConverter();
-            IFile file = new DiskSource();
+            var driveConverter = new OneDriveConverter(logger);
+            IFile file = new DiskSource(logger);
             try
             {
                 file.Read(fileName);
@@ -46,35 +46,35 @@ namespace Converter
             }
             catch (FileNotFoundException)
             {
-                IFile.logger.Error($"Файл {fileName} не найден");
+                logger.Error($"Файл {fileName} не найден");
             }
             catch (ArgumentNullException)
             {
-                IFile.logger.Error("При передаче аргумента был передан null");
+                logger.Error("При передаче аргумента был передан null");
             }
             catch (UnconnectedException)
             {
-                IFile.logger.Error("Не удалось подключиться к серверу");
+                logger.Error("Не удалось подключиться к серверу");
             }
             catch (UnauthorizedAccessException)
             {
-                IFile.logger.Error("Аутентификация не прошла");
+                logger.Error("Аутентификация не прошла");
             }
             catch (WebException)
             {
-                IFile.logger.Error("Не удалось подключиться к серверу. Связь потеряна");
+                logger.Error("Не удалось подключиться к серверу. Связь потеряна");
             }
             catch (AggregateException)
             {
-                IFile.logger.Error("Нет доступа к интернету");
+                logger.Error("Нет доступа к интернету");
             }
             catch (DataNullException)
             {
-                IFile.logger.Error("Данные из файла не загружены");
+                logger.Error("Данные из файла не загружены");
             }
             catch (HttpRequestException)
             {
-                IFile.logger.Error("Неправильный запрос к серверу");
+                logger.Error("Неправильный запрос к серверу");
             }
         }
     }

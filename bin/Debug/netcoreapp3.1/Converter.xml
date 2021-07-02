@@ -34,7 +34,7 @@
             <returns>Название файла с расширением pdf</returns>
             <exception cref="T:System.ArgumentNullException">Некорректное название файла</exception>
         </member>
-        <member name="M:Converter.IOneDriveConnection.Init">
+        <member name="M:Converter.IOneDriveConnection.Init(Converter.ILogger)">
             <summary>
             Загрузка конфигурационных данных
             </summary>

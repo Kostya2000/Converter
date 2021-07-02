@@ -1,18 +1,21 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-using NLog;
 
 namespace Converter
 {
     class OneDriveConverter
     {
-        private const int MaxFilesize = 0000030;
+        private const int MaxFilesize = 4000000;
         private const int pushSize = 327680;
-        private static Logger logger = LogManager.GetCurrentClassLogger();
         private string guid = null;
-        private Lazy<OneDriveConnection> connection=new Lazy<OneDriveConnection>();
+        private static ILogger logger;
+        private Lazy<OneDriveConnection> connection=new Lazy<OneDriveConnection>(()=>new OneDriveConnection(logger));
 
+        public OneDriveConverter(ILogger _logger)
+        {
+            logger = _logger;
+        }
         public Stream Converter(Stream docxStream, int streamSize = 0)
         {
             SendFile(docxStream, streamSize);
@@ -132,7 +135,7 @@ namespace Converter
         /// <param name="sizeStream">[Необязательный параметр] Размер файла</param>
         private void SendFile(Stream stream, int sizeStream = 0)
         {
-            IOneDriveConnection.logger.Debug("Определение запроса для отправки файла...");
+            logger.Debug("Определение запроса для отправки файла...");
             if (sizeStream > MaxFilesize || stream.Length > MaxFilesize)
             {
                 SendLargeFile(stream);

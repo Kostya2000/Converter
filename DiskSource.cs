@@ -7,6 +7,12 @@ namespace Converter
     {
         private Stream stream;
         private string name = null;
+        private readonly ILogger logger;
+
+        public DiskSource(ILogger logger)
+        {
+            this.logger = logger;
+        }
 
         /// <summary>
         /// Геттер и сеттер для потока данных
@@ -39,7 +45,7 @@ namespace Converter
                throw new FileNotFoundException("Файл не найден");
             }
             stream = File.OpenRead(fileName);
-            IFile.logger.Info("Файл успешно загружен из диска");
+            logger.Info("Файл успешно загружен из диска");
         }
 
         /// <summary>
@@ -51,7 +57,7 @@ namespace Converter
             {
                 stream.CopyTo(file);
                 file.FlushAsync();
-                IFile.logger.Info("Файл успешно загружен на диск");
+                logger.Info("Файл успешно загружен на диск");
             }
         }
 
