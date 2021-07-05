@@ -15,11 +15,11 @@ namespace Converter
         /// Загрузка конфигурации
         /// </summary>
         /// <param name = "logger"> Логгер </param>
-        void Init(ref Microsoft.Extensions.Logging.ILogger logger)
+        void Init(out Microsoft.Extensions.Logging.ILogger logger)
         {
             var loggerFactory = new LoggerFactory();
             var loggerConfig = new LoggerConfiguration()
-            .WriteTo.File("logs\\myapp.txt", rollingInterval: RollingInterval.Day)
+            .WriteTo.File($"logs\\{System.DateTime.Today}.txt", rollingInterval: RollingInterval.Day)
             .CreateLogger();
             loggerFactory.AddSerilog(loggerConfig);
             logger = loggerFactory.CreateLogger<OneDriveConverterConsole>();

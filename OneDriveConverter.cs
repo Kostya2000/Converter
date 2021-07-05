@@ -51,9 +51,8 @@ namespace Converter
                 logger.LogWarning("Данные из файла не загружены");
                 throw new DataNullException("Данные из файла не загружены");
             }
-            WebRequest request;
             var reqStream = Stream.Null;
-            connection.Value.Connect(ref reqStream, out request, "PUT", $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}:/content", "multipart/form-data", true);
+            connection.Value.Connect(ref reqStream, out var request, "PUT", $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}:/content", "multipart/form-data", true);
             stream.CopyTo(reqStream);
             _ = request.GetResponse();
             logger.LogInformation("Файл успешно отправлен на сервер");
@@ -103,8 +102,7 @@ namespace Converter
             webHeader.Add("Content-Length", (endPosition-beginPosition+1).ToString());
             webHeader.Add("Content-Range", "bytes " + (beginPosition).ToString() + "-" + (endPosition).ToString() + "/" + (stream.Length).ToString());
             var reqStream = Stream.Null;
-            WebRequest request;
-            connection.Value.Connect(ref reqStream, out request, "PUT", connection.Value.UploadUrl(GUID).ToString(), "multipart/form-data", true, true, webHeader);
+            connection.Value.Connect(ref reqStream, out var request, "PUT", connection.Value.UploadUrl(GUID).ToString(), "multipart/form-data", true, true, webHeader);
             stream.CopyTo(reqStream, pushSize);
             var _ = request.GetResponse();
         }
@@ -117,8 +115,7 @@ namespace Converter
         {
             logger.LogInformation("Запрос на загрузку файла из OneDrive...");
             var reqStream = Stream.Null;
-            WebRequest request;
-            connection.Value.Connect(ref reqStream, out request, "GET", $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}:/content?format=pdf", "pdf/application");
+            connection.Value.Connect(ref reqStream, out var request, "GET", $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}:/content?format=pdf", "pdf/application");
             var resp = request.GetResponse();
             if (resp == null)
             {
@@ -138,8 +135,7 @@ namespace Converter
         {
             logger.LogInformation("Запрос на удаление файла из OneDrive");
             var reqStream = Stream.Null;
-            WebRequest request;
-            connection.Value.Connect(ref reqStream, out request, "DELETE", $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}", null);
+            connection.Value.Connect(ref reqStream, out var request, "DELETE", $"https://graph.microsoft.com/v1.0/drive/root:/{GUID}", null);
             if (!(request.GetResponse() is HttpWebResponse resp))
             {
                 logger.LogError("Не удалось подключится к серверу");
@@ -167,7 +163,7 @@ namespace Converter
         }
 
         /// <summary>
-        /// Генерация guid по принципу lazy
+        /// Возвращение GUID
         /// </summary>
         private string GUID
         {

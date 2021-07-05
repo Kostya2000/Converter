@@ -22,7 +22,7 @@ namespace Converter
         private static void Init()
         {
             IOneDriveConnection connection = new OneDriveConnection(logger);
-            connection.Init(ref logger);
+            connection.Init(out logger);
         }
 
         /// <summary>

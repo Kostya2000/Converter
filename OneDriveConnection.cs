@@ -93,8 +93,7 @@ namespace Converter
             body.Add("client_secret", IOneDriveConnection.client_secret);
             var encodedBody = new FormUrlEncodedContent(body).ReadAsByteArrayAsync();
             var reqStream = Stream.Null;
-            WebRequest request;
-            Connect(ref reqStream, out request, "POST", IOneDriveConnection.urlAuth, null, true, false);
+            Connect(ref reqStream, out var request, "POST", IOneDriveConnection.urlAuth, null, true, false);
             reqStream.Write(encodedBody.Result, 0, encodedBody.Result.Length);
             var responseMessage = request.GetResponse();
             if (responseMessage == null)
@@ -115,8 +114,7 @@ namespace Converter
         {
             logger.LogInformation("Выполняется запрос на получение URL с OneDrive");
             var reqStream = Stream.Null;
-            WebRequest request;
-            Connect(ref reqStream, out request, "POST", $"https://graph.microsoft.com/v1.0/drive/root:/{guid}:/createUploadSession", null);
+            Connect(ref reqStream, out var request, "POST", $"https://graph.microsoft.com/v1.0/drive/root:/{guid}:/createUploadSession", null);
             var response = request.GetResponse() as HttpWebResponse;
             var responseStream = new StreamReader(response.GetResponseStream());
             if (responseStream == null)
