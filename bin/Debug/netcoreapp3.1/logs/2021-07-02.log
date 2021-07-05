@@ -1,282 +1,315 @@
-2021-07-02 12:41:09.6467  method:  Converter.IOneDriveConnection.Init         
+2021-07-02 15:53:39.0472  method:  Converter.NLog.Info         
     INFO Выполняется загрузка конфигурации OneDrive 
 
-2021-07-02 12:41:09.8929  method:  Converter.IOneDriveConnection.Init         
+2021-07-02 15:53:39.2886  method:  Converter.NLog.Info         
     INFO Загрузка конфигурации OneDrive прошла успешно 
 
-2021-07-02 12:41:09.9122  method:  Converter.DiskSource.Read         
+2021-07-02 15:53:39.3133  method:  Converter.NLog.Info         
+    INFO Начало загрузки файла с диска 
+
+2021-07-02 15:53:39.3133  method:  Converter.NLog.Info         
     INFO Файл успешно загружен из диска 
 
-2021-07-02 12:41:09.9122  method:  Converter.OneDriveConverter.SendFile         
+2021-07-02 15:53:39.3255  method:  Converter.NLog.Debug         
     DEBUG Определение запроса для отправки файла... 
 
-2021-07-02 12:41:09.9122  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO Запрос на отправку большого файла на OneDrive 
+2021-07-02 15:53:39.3346  method:  Converter.NLog.Info         
+    INFO Запрос на отправку файла размером меньше 4МБ на OneDrive... 
 
-2021-07-02 12:41:09.9122  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO Отправка фрагментов: 
+2021-07-02 15:53:39.3346  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
 
-2021-07-02 12:41:09.9269  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 1Content-Range bytes 0-327679/3204556 
+2021-07-02 15:53:39.3597  method:  Converter.NLog.Info         
+    INFO Выполняется запрос на аутентификацию с Onedrive... 
 
-2021-07-02 12:41:09.9535  method:  Converter.OneDriveConnection.GetUploadUrl         
-    INFO Выполняется запрос на получение URL с OneDrive 
+2021-07-02 15:53:41.8949  method:  Converter.NLog.Info         
+    INFO Аутентификация прошла успешно 
 
-2021-07-02 12:41:09.9614  method:  Converter.OneDriveConnection.GetToken         
-    INFO Выполняется запрос на соединение с OneDrive 
+2021-07-02 15:53:41.8949  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
 
-2021-07-02 12:41:11.4821  method:  Converter.OneDriveConnection.ParseToken         
-    DEBUG Аутентификация прошла успешно 
-
-2021-07-02 12:41:14.0236  method:  Converter.OneDriveConnection.ParseUploadUrl         
-    DEBUG Url адрес ресурса получен успешно 
-
-2021-07-02 12:41:21.6226  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 2Content-Range bytes 327680-655359/3204556 
-
-2021-07-02 12:42:38.7451  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
-    ERROR Не удалось подключиться к серверу. Связь потеряна 
-
-2021-07-02 12:46:31.3385  method:  Converter.IOneDriveConnection.Init         
-    INFO Выполняется загрузка конфигурации OneDrive 
-
-2021-07-02 12:46:31.4645  method:  Converter.IOneDriveConnection.Init         
-    INFO Загрузка конфигурации OneDrive прошла успешно 
-
-2021-07-02 12:46:31.4645  method:  Converter.DiskSource.Read         
-    INFO Файл успешно загружен из диска 
-
-2021-07-02 12:46:31.4645  method:  Converter.OneDriveConverter.SendFile         
-    DEBUG Определение запроса для отправки файла... 
-
-2021-07-02 12:46:31.4645  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO Запрос на отправку большого файла на OneDrive 
-
-2021-07-02 12:46:31.4645  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO Отправка фрагментов: 
-
-2021-07-02 12:46:31.4645  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 1Content-Range bytes 0-327679/3204556 
-
-2021-07-02 12:46:31.4645  method:  Converter.OneDriveConnection.GetUploadUrl         
-    INFO Выполняется запрос на получение URL с OneDrive 
-
-2021-07-02 12:46:31.4836  method:  Converter.OneDriveConnection.GetToken         
-    INFO Выполняется запрос на соединение с OneDrive 
-
-2021-07-02 12:46:32.5786  method:  Converter.OneDriveConnection.ParseToken         
-    DEBUG Аутентификация прошла успешно 
-
-2021-07-02 12:46:33.8256  method:  Converter.OneDriveConnection.ParseUploadUrl         
-    DEBUG Url адрес ресурса получен успешно 
-
-2021-07-02 12:46:44.7624  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 2Content-Range bytes 327680-655359/3204556 
-
-2021-07-02 12:46:55.2287  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 3Content-Range bytes 655360-983039/3204556 
-
-2021-07-02 12:47:01.5837  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 4Content-Range bytes 983040-1310719/3204556 
-
-2021-07-02 12:47:05.2571  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 5Content-Range bytes 1310720-1638399/3204556 
-
-2021-07-02 12:47:09.6591  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 6Content-Range bytes 1638400-1966079/3204556 
-
-2021-07-02 12:47:14.5919  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 7Content-Range bytes 1966080-2293759/3204556 
-
-2021-07-02 12:47:19.3249  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 8Content-Range bytes 2293760-2621439/3204556 
-
-2021-07-02 12:47:21.1331  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 9Content-Range bytes 2621440-2949119/3204556 
-
-2021-07-02 12:47:22.8817  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO Отправка последнего фрагмента: 
-
-2021-07-02 12:47:22.8817  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO Content-Range bytes 2949120-3204555/3204556 
-
-2021-07-02 12:47:25.9376  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO Файл успешно передан на сервера 
-
-2021-07-02 12:47:25.9376  method:  Converter.OneDriveConverter.GetFile         
-    INFO Запрос на загрузку файла из OneDrive 
-
-2021-07-02 12:47:55.9398  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
-    ERROR Не удалось подключиться к серверу. Связь потеряна 
-
-2021-07-02 13:35:28.2758  method:  Converter.IOneDriveConnection.Init         
-    INFO Выполняется загрузка конфигурации OneDrive 
-
-2021-07-02 13:35:28.5213  method:  Converter.IOneDriveConnection.Init         
-    INFO Загрузка конфигурации OneDrive прошла успешно 
-
-2021-07-02 13:35:28.5493  method:  Converter.DiskSource.Read         
-    INFO Файл успешно загружен из диска 
-
-2021-07-02 13:35:28.5590  method:  Converter.OneDriveConverter.SendFile         
-    DEBUG Определение запроса для отправки файла... 
-
-2021-07-02 13:35:28.5590  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO Запрос на отправку большого файла на OneDrive 
-
-2021-07-02 13:35:28.5590  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO Отправка фрагментов: 
-
-2021-07-02 13:35:28.5590  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 1Content-Range bytes 0-327679/3204556 
-
-2021-07-02 13:35:28.5951  method:  Converter.OneDriveConnection.GetUploadUrl         
-    INFO Выполняется запрос на получение URL с OneDrive 
-
-2021-07-02 13:35:28.6024  method:  Converter.OneDriveConnection.GetToken         
-    INFO Выполняется запрос на соединение с OneDrive 
-
-2021-07-02 13:35:31.4361  method:  Converter.OneDriveConnection.ParseToken         
-    DEBUG Аутентификация прошла успешно 
-
-2021-07-02 13:35:34.8131  method:  Converter.OneDriveConnection.ParseUploadUrl         
-    DEBUG Url адрес ресурса получен успешно 
-
-2021-07-02 13:35:44.2154  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 2Content-Range bytes 327680-655359/3204556 
-
-2021-07-02 13:35:50.5531  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 3Content-Range bytes 655360-983039/3204556 
-
-2021-07-02 13:35:55.2436  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 4Content-Range bytes 983040-1310719/3204556 
-
-2021-07-02 13:36:01.2064  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 5Content-Range bytes 1310720-1638399/3204556 
-
-2021-07-02 13:36:03.7851  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 6Content-Range bytes 1638400-1966079/3204556 
-
-2021-07-02 13:36:07.9582  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 7Content-Range bytes 1966080-2293759/3204556 
-
-2021-07-02 13:36:10.5399  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 8Content-Range bytes 2293760-2621439/3204556 
-
-2021-07-02 13:36:19.9724  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO 9Content-Range bytes 2621440-2949119/3204556 
-
-2021-07-02 13:36:21.9746  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO Отправка последнего фрагмента: 
-
-2021-07-02 13:36:21.9746  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO Content-Range bytes 2949120-3204555/3204556 
-
-2021-07-02 13:36:25.5336  method:  Converter.OneDriveConverter.SendLargeFile         
-    INFO Файл успешно передан на сервера 
-
-2021-07-02 13:36:25.5336  method:  Converter.OneDriveConverter.GetFile         
-    INFO Запрос на загрузку файла из OneDrive 
-
-2021-07-02 13:36:56.2553  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
-    ERROR Не удалось подключиться к серверу. Связь потеряна 
-
-2021-07-02 13:38:20.4541  method:  Converter.IOneDriveConnection.Init         
-    INFO Выполняется загрузка конфигурации OneDrive 
-
-2021-07-02 13:38:20.6727  method:  Converter.IOneDriveConnection.Init         
-    INFO Загрузка конфигурации OneDrive прошла успешно 
-
-2021-07-02 13:38:20.6989  method:  Converter.DiskSource.Read         
-    INFO Файл успешно загружен из диска 
-
-2021-07-02 13:38:20.7085  method:  Converter.OneDriveConverter.SendFile         
-    DEBUG Определение запроса для отправки файла... 
-
-2021-07-02 13:38:20.7085  method:  Converter.OneDriveConverter.SendSmallFile         
-    INFO Запрос на отправку файла на OneDrive 
-
-2021-07-02 13:38:20.7404  method:  Converter.OneDriveConnection.GetToken         
-    INFO Выполняется запрос на соединение с OneDrive 
-
-2021-07-02 13:38:23.8986  method:  Converter.OneDriveConnection.ParseToken         
-    DEBUG Аутентификация прошла успешно 
-
-2021-07-02 13:38:31.8804  method:  Converter.OneDriveConverter.SendSmallFile         
+2021-07-02 15:54:15.4724  method:  Converter.NLog.Info         
     INFO Файл успешно отправлен на сервер 
 
-2021-07-02 13:38:31.8804  method:  Converter.OneDriveConverter.GetFile         
-    INFO Запрос на загрузку файла из OneDrive 
+2021-07-02 15:54:15.4724  method:  Converter.NLog.Debug         
+    DEBUG Файл отправлен успешно 
 
-2021-07-02 13:39:01.9962  method:  Converter.OneDriveConverterConsole.ConvertFileFromDiskSource         
+2021-07-02 15:54:15.4724  method:  Converter.NLog.Info         
+    INFO Запрос на загрузку файла из OneDrive... 
+
+2021-07-02 15:54:15.4724  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 15:54:45.2946  method:  Converter.NLog.Error         
     ERROR Не удалось подключиться к серверу. Связь потеряна 
 
-2021-07-02 15:23:38.1606  method:  Converter.NLog.Info         
+2021-07-02 16:02:59.8894  method:  Converter.NLog.Info         
     INFO Выполняется загрузка конфигурации OneDrive 
 
-2021-07-02 15:23:38.4052  method:  Converter.NLog.Info         
+2021-07-02 16:03:00.1063  method:  Converter.NLog.Info         
     INFO Загрузка конфигурации OneDrive прошла успешно 
 
-2021-07-02 15:23:38.4641  method:  Converter.NLog.Info         
+2021-07-02 16:03:00.1355  method:  Converter.NLog.Info         
+    INFO Начало загрузки файла с диска 
+
+2021-07-02 16:03:00.1355  method:  Converter.NLog.Info         
     INFO Файл успешно загружен из диска 
 
-2021-07-02 15:23:38.4795  method:  Converter.NLog.Debug         
+2021-07-02 16:03:00.1537  method:  Converter.NLog.Debug         
     DEBUG Определение запроса для отправки файла... 
 
-2021-07-02 15:23:38.4899  method:  Converter.NLog.Info         
-    INFO Запрос на отправку файла на OneDrive 
+2021-07-02 16:03:00.1641  method:  Converter.NLog.Info         
+    INFO Запрос на отправку файла размером меньше 4МБ на OneDrive... 
 
-2021-07-02 15:24:24.0099  method:  Converter.NLog.Info         
-    INFO Выполняется загрузка конфигурации OneDrive 
+2021-07-02 16:03:00.1641  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
 
-2021-07-02 15:24:24.2085  method:  Converter.NLog.Info         
-    INFO Загрузка конфигурации OneDrive прошла успешно 
+2021-07-02 16:03:00.1858  method:  Converter.NLog.Info         
+    INFO Выполняется запрос на аутентификацию с Onedrive... 
 
-2021-07-02 15:24:24.2530  method:  Converter.NLog.Info         
-    INFO Файл успешно загружен из диска 
+2021-07-02 16:03:01.9185  method:  Converter.NLog.Info         
+    INFO Аутентификация прошла успешно 
 
-2021-07-02 15:24:24.2698  method:  Converter.NLog.Debug         
-    DEBUG Определение запроса для отправки файла... 
+2021-07-02 16:03:01.9185  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
 
-2021-07-02 15:24:24.2859  method:  Converter.NLog.Info         
-    INFO Запрос на отправку файла на OneDrive 
-
-2021-07-02 15:29:17.9078  method:  Converter.NLog.Info         
-    INFO Выполняется загрузка конфигурации OneDrive 
-
-2021-07-02 15:29:21.5489  method:  Converter.NLog.Info         
-    INFO Загрузка конфигурации OneDrive прошла успешно 
-
-2021-07-02 15:29:38.3361  method:  Converter.NLog.Info         
-    INFO Файл успешно загружен из диска 
-
-2021-07-02 15:29:42.1401  method:  Converter.NLog.Debug         
-    DEBUG Определение запроса для отправки файла... 
-
-2021-07-02 15:29:43.3697  method:  Converter.NLog.Info         
-    INFO Запрос на отправку файла на OneDrive 
-
-2021-07-02 15:29:45.3328  method:  Converter.NLog.Info         
-    INFO Выполняется запрос на соединение с OneDrive 
-
-2021-07-02 15:29:47.3279  method:  Converter.NLog.Debug         
-    DEBUG Аутентификация прошла успешно 
-
-2021-07-02 15:30:04.4803  method:  Converter.NLog.Info         
+2021-07-02 16:03:09.1341  method:  Converter.NLog.Info         
     INFO Файл успешно отправлен на сервер 
 
-2021-07-02 15:30:06.0629  method:  Converter.NLog.Info         
-    INFO Запрос на загрузку файла из OneDrive 
+2021-07-02 16:03:09.1341  method:  Converter.NLog.Debug         
+    DEBUG Файл отправлен успешно 
 
-2021-07-02 15:30:43.6416  method:  Converter.NLog.Info         
+2021-07-02 16:03:09.1341  method:  Converter.NLog.Info         
+    INFO Запрос на загрузку файла из OneDrive... 
+
+2021-07-02 16:03:09.1341  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:03:39.9128  method:  Converter.NLog.Error         
+    ERROR Не удалось подключиться к серверу. Связь потеряна 
+
+2021-07-02 16:04:26.0933  method:  Converter.NLog.Info         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-02 16:04:26.2880  method:  Converter.NLog.Info         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-02 16:04:26.3225  method:  Converter.NLog.Info         
+    INFO Начало загрузки файла с диска 
+
+2021-07-02 16:04:26.3225  method:  Converter.NLog.Info         
+    INFO Файл успешно загружен из диска 
+
+2021-07-02 16:04:26.3397  method:  Converter.NLog.Info         
+    INFO Определение запроса для отправки файла... 
+
+2021-07-02 16:04:26.3548  method:  Converter.NLog.Info         
+    INFO Запрос на отправку файла размером меньше 4МБ на OneDrive... 
+
+2021-07-02 16:04:26.3717  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:04:26.3881  method:  Converter.NLog.Info         
+    INFO Выполняется запрос на аутентификацию с Onedrive... 
+
+2021-07-02 16:04:28.0570  method:  Converter.NLog.Info         
+    INFO Аутентификация прошла успешно 
+
+2021-07-02 16:04:28.0570  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-02 16:04:36.1352  method:  Converter.NLog.Info         
+    INFO Файл успешно отправлен на сервер 
+
+2021-07-02 16:04:36.1352  method:  Converter.NLog.Info         
+    INFO Файл отправлен успешно 
+
+2021-07-02 16:04:36.1352  method:  Converter.NLog.Info         
+    INFO Запрос на загрузку файла из OneDrive... 
+
+2021-07-02 16:04:36.1352  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:05:00.2644  method:  Converter.NLog.Info         
     INFO Файл успешно загружен из OneDrive 
 
-2021-07-02 15:30:45.7838  method:  Converter.NLog.Info         
+2021-07-02 16:05:00.2644  method:  Converter.NLog.Info         
     INFO Запрос на удаление файла из OneDrive 
 
-2021-07-02 15:30:54.1292  method:  Converter.NLog.Info         
+2021-07-02 16:05:00.2644  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:05:02.2238  method:  Converter.NLog.Info         
     INFO Файл успешно удален с сервера 
 
-2021-07-02 15:32:35.2040  method:  Converter.NLog.Info         
+2021-07-02 16:05:02.2238  method:  Converter.NLog.Info         
+    INFO Начало выгрузки файла на диск 
+
+2021-07-02 16:06:09.9444  method:  Converter.NLog.Info         
     INFO Файл успешно загружен на диск 
+
+2021-07-02 16:07:21.4928  method:  Converter.NLog.Info         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-02 16:07:21.6882  method:  Converter.NLog.Info         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-02 16:07:21.7621  method:  Converter.NLog.Info         
+    INFO Начало загрузки файла с диска 
+
+2021-07-02 16:07:21.7621  method:  Converter.NLog.Info         
+    INFO Файл успешно загружен из диска 
+
+2021-07-02 16:07:21.7927  method:  Converter.NLog.Info         
+    INFO Определение запроса для отправки файла... 
+
+2021-07-02 16:07:21.7927  method:  Converter.NLog.Info         
+    INFO Запрос на отправку файла размером больше 4МБ на OneDrive... 
+
+2021-07-02 16:07:21.7927  method:  Converter.NLog.Info         
+    INFO Отправка фрагментов: 
+
+2021-07-02 16:07:21.7991  method:  Converter.NLog.Info         
+    INFO 1 Content-Range bytes 0-327679/14607066 
+
+2021-07-02 16:07:21.8362  method:  Converter.NLog.Info         
+    INFO Выполняется запрос на получение URL с OneDrive 
+
+2021-07-02 16:07:21.8362  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:07:21.8464  method:  Converter.NLog.Info         
+    INFO Выполняется запрос на аутентификацию с Onedrive... 
+
+2021-07-02 16:07:23.2732  method:  Converter.NLog.Info         
+    INFO Аутентификация прошла успешно 
+
+2021-07-02 16:07:24.7625  method:  Converter.NLog.Info         
+    INFO Url адрес ресурса получен успешно 
+
+2021-07-02 16:07:24.7625  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:07:24.7625  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-02 16:07:47.4175  method:  Converter.NLog.Info         
+    INFO 2 Content-Range bytes 327680-655359/14607066 
+
+2021-07-02 16:07:47.4175  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:07:47.4175  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-02 16:08:15.7756  method:  Converter.NLog.Info         
+    INFO 3 Content-Range bytes 655360-983039/14607066 
+
+2021-07-02 16:08:15.7756  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:08:15.7756  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-02 16:08:39.2237  method:  Converter.NLog.Info         
+    INFO 4 Content-Range bytes 983040-1310719/14607066 
+
+2021-07-02 16:08:39.2237  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:08:39.2237  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-02 16:09:03.8376  method:  Converter.NLog.Info         
+    INFO 5 Content-Range bytes 1310720-1638399/14607066 
+
+2021-07-02 16:09:03.8376  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:09:03.8376  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-02 16:09:25.3134  method:  Converter.NLog.Info         
+    INFO 6 Content-Range bytes 1638400-1966079/14607066 
+
+2021-07-02 16:09:25.3134  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:09:25.3134  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-02 16:09:42.0507  method:  Converter.NLog.Info         
+    INFO 7 Content-Range bytes 1966080-2293759/14607066 
+
+2021-07-02 16:09:42.0507  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:09:42.0507  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-02 16:10:03.7858  method:  Converter.NLog.Info         
+    INFO 8 Content-Range bytes 2293760-2621439/14607066 
+
+2021-07-02 16:10:03.7858  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:10:03.7858  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-02 16:10:26.2604  method:  Converter.NLog.Info         
+    INFO 9 Content-Range bytes 2621440-2949119/14607066 
+
+2021-07-02 16:10:26.2604  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:10:26.2604  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-02 16:10:47.8022  method:  Converter.NLog.Info         
+    INFO 10 Content-Range bytes 2949120-3276799/14607066 
+
+2021-07-02 16:10:47.8022  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:10:47.8022  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-02 16:11:11.6324  method:  Converter.NLog.Info         
+    INFO 11 Content-Range bytes 3276800-3604479/14607066 
+
+2021-07-02 16:11:11.6324  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:11:11.6324  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-02 16:11:34.5850  method:  Converter.NLog.Info         
+    INFO 12 Content-Range bytes 3604480-3932159/14607066 
+
+2021-07-02 16:11:34.5850  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:11:34.5850  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-02 16:12:02.6693  method:  Converter.NLog.Info         
+    INFO 13 Content-Range bytes 3932160-4259839/14607066 
+
+2021-07-02 16:12:02.6693  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:12:02.6693  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-02 16:12:22.5143  method:  Converter.NLog.Info         
+    INFO 14 Content-Range bytes 4259840-4587519/14607066 
+
+2021-07-02 16:12:22.5143  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-02 16:12:22.5143  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-02 16:13:23.2371  method:  Converter.NLog.Error         
+    ERROR Не удалось подключиться к серверу. Связь потеряна 
 

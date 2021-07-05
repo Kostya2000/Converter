@@ -4,6 +4,18 @@
         <name>Converter</name>
     </assembly>
     <members>
+        <member name="M:Converter.DataNullException.#ctor(System.String)">
+            <summary>
+            Конструктоо
+            </summary>
+            <param name = "message"> Сообщение </param>
+        </member>
+        <member name="M:Converter.DiskSource.#ctor(Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name = "logger"> Логгер </param>
+        </member>
         <member name="P:Converter.DiskSource.Stream">
             <summary>
             Геттер и сеттер для потока данных
@@ -18,8 +30,8 @@
             <summary>
             Чтение файла из диска
             </summary>
-            <param name="fileName"></param>
-            <exception cref="T:System.IO.FileNotFoundException">Не удалось найти файл на диске</exception>
+            <param name = "fileName"></param>
+            <exception cref = "T:System.IO.FileNotFoundException"> Не удалось найти файл на диске </exception>
         </member>
         <member name="M:Converter.DiskSource.Write">
             <summary>
@@ -28,16 +40,47 @@
         </member>
         <member name="M:Converter.DiskSource.ReplaceExtension(System.String)">
             <summary>
-            меняем расширения файла
+            Замена расширения файла
             </summary>
-            <param name="fileName">Название файла</param>
-            <returns>Название файла с расширением pdf</returns>
-            <exception cref="T:System.ArgumentNullException">Некорректное название файла</exception>
+            <param name = "fileName"> Название файла </param>
+            <returns> Название файла с расширением pdf </returns>
+            <exception cref = "T:System.ArgumentNullException"> Некорректное название файла </exception>
         </member>
-        <member name="M:Converter.IOneDriveConnection.Init(Converter.ILogger)">
+        <member name="M:Converter.IOneDriveConnection.Init(Microsoft.Extensions.Logging.ILogger@)">
             <summary>
-            Загрузка конфигурационных данных
+            Загрузка конфигурации
             </summary>
+            <param name = "logger"> Логгер </param>
+        </member>
+        <member name="M:Converter.IReadFile.Read(System.String)">
+            <summary>
+            Чтение файла
+            </summary>
+            <param name = "fileName"></param>
+        </member>
+        <member name="M:Converter.IWriteFile.Write">
+            <summary>
+            Запись файла
+            </summary>
+        </member>
+        <member name="M:Converter.OneDriveConnection.#ctor(Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name = "logger"> Логгер </param>
+        </member>
+        <member name="M:Converter.OneDriveConnection.Connect(System.IO.Stream@,System.Net.WebRequest@,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Net.WebHeaderCollection)">
+            <summary>
+            Установка соединения с сервером
+            </summary>
+            <param name = "reqStream"> [Ссылка ref] Поток для отправки тела запроса </param>
+            <param name = "request"> [Ссылка out] Запрос </param>
+            <param name = "method"> Метод </param>
+            <param name = "graphUrl"> Конечная точка </param>
+            <param name = "contentType"> Тип контента </param>
+            <param name = "returnReqStream"> [Необязательный параметр] Открыть поток для открытия тела запроса </param>
+            <param name = "needAuth"> [Необязательный параметр] Наличие необходимости в токене доступа </param>
+            <param name = "header"> [Необязательный параметр] Дополнительные загаловки запроса. Примечание: указывать токен авторизации не нужно </param>
         </member>
         <member name="P:Converter.OneDriveConnection.Token">
             <summary>
@@ -46,74 +89,96 @@
         </member>
         <member name="M:Converter.OneDriveConnection.UploadUrl(System.String)">
             <summary>
-            Получаем ресурс для отправки диапозонов байт
+            Получение ресурс для отправки диапозонов байт
             </summary>
-            <param name="guid"></param>
-            <returns></returns>
+            <param name = "guid"> GUID файла </param>
+            <returns> Url адрес ресурса </returns>
         </member>
         <member name="M:Converter.OneDriveConnection.GetToken">
             <summary>
             Соединение с OneDrive
             </summary>
-            <returns>Токен доступа</returns>
-            <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
+            <returns> Токен доступа </returns>
+            <exception cref = "T:Converter.UnconnectedException"> Не удалось подключиться к серверу </exception>
         </member>
-        <member name="M:Converter.OneDriveConnection.ParseToken(System.Net.Http.HttpResponseMessage)">
+        <member name="M:Converter.OneDriveConnection.ParseToken(System.IO.StreamReader)">
             <summary>
             Парсим ответ от сервера
             </summary>
-            <param name="responseMessage">Ответ от сервера</param>
-            <returns>Токен доступа</returns>
-            <exception cref="T:System.UnauthorizedAccessException">Аутентификация не прошла</exception>
+            <param name = "responseMessage"> Ответ от сервера </param>
+            <returns> Токен доступа </returns>
+            <exception cref = "T:System.UnauthorizedAccessException"> Аутентификация не прошла </exception>
         </member>
         <member name="M:Converter.OneDriveConnection.GetUploadUrl(System.String)">
             <summary>
             Запрос на получение ресурса для отправки большого файла
             </summary>
-            <returns>Url адрес ресурса</returns>
-            <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
+            <returns> Url адрес ресурса </returns>
+            <exception cref = "T:Converter.UnconnectedException"> Не удалось подключиться к серверу </exception>
         </member>
         <member name="M:Converter.OneDriveConnection.ParseUploadUrl(System.IO.StreamReader)">
             <summary>
             Парсим ответ от сервера
             </summary>
-            <param name="responseMessage">Ответ от сервера</param>
-            <returns>Url адрес ресурса</returns>
-            <exception cref="T:System.Net.Http.HttpRequestException">Неправильный запрос к серверу</exception>
+            <param name = "responseMessage"> Ответ от сервера </param>
+            <returns> Url адрес ресурса </returns>
+            <exception cref = "T:System.Net.Http.HttpRequestException"> Неправильный запрос к серверу </exception>
+        </member>
+        <member name="M:Converter.OneDriveConverter.#ctor(Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name = "_logger"> Логгер </param>
+        </member>
+        <member name="M:Converter.OneDriveConverter.Converter(System.IO.Stream,System.Int32)">
+            <summary>
+            Конвертация документа
+            </summary>
+            <param name = "docxStream"> поток данных </param>
+            <param name = "streamSize"> [Необязательный параметр] Размер данных </param>
+            <returns></returns>
         </member>
         <member name="M:Converter.OneDriveConverter.SendSmallFile(System.IO.Stream)">
             <summary>
-            Отправляем файл с размером меньше 4 МБ на сервер
+            Отправка файла с размером меньше 4 МБ на сервер
             </summary>
-            <param name="stream">Поток данных</param>
-            <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
-            <exception cref="T:Converter.DataNullException">"Данные из файла не загружены"</exception>
+            <param name = "stream"> Поток данных </param>
+            <exception cref= "T:Converter.UnconnectedException"> Не удалось подключиться к серверу </exception>
+            <exception cref= "T:Converter.DataNullException"> "Данные из файла не загружены" </exception>
         </member>
         <member name="M:Converter.OneDriveConverter.SendLargeFile(System.IO.Stream)">
             <summary>
-            Отправляем файл с размром больше 4 МБ на сервер
+            Отправка файла с размром больше 4 МБ на сервер
             </summary>
-            <param name="stream">Поток данных</param>
-            <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
+            <param name= "stream"> Поток данных </param>
+            <exception cref = "T:Converter.UnconnectedException"> Не удалось подключиться к серверу </exception>
+        </member>
+        <member name="M:Converter.OneDriveConverter.SendFrame(System.IO.Stream@,System.Int32,System.Int64)">
+            <summary>
+            Отправка кадра
+            </summary>
+            <param name = "stream"> Поток данных </param>
+            <param name = "beginPosition"> Стартовая позиция отправки данных </param>
+            <param name = "endPosition"> Конечная позиция отправки данных </param>
         </member>
         <member name="M:Converter.OneDriveConverter.GetFile">
              <summary>
-             Получаем файл с сервера
+             Получение файла с сервера
              </summary>
-            <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
+            <exception cref = "T:Converter.UnconnectedException"> Не удалось подключиться к серверу </exception>
         </member>
-        <member name="M:Converter.OneDriveConverter.DeleteFile(System.Net.WebHeaderCollection[])">
+        <member name="M:Converter.OneDriveConverter.DeleteFile">
             <summary>
-            Удаляем файла с сервера
+            Удаление файла с сервера
             </summary>
-            <exception cref="T:Converter.UnconnectedException">Не удалось подключиться к серверу</exception>
+            <exception cref = "T:Converter.UnconnectedException"> Не удалось подключиться к серверу </exception>
         </member>
         <member name="M:Converter.OneDriveConverter.SendFile(System.IO.Stream,System.Int32)">
             <summary>
-            Определяем запрос для отправки файла
+            Определение запроса для отправки файла
             </summary>
-            <param name="stream">Поток данных</param>
-            <param name="sizeStream">[Необязательный параметр] Размер файла</param>
+            <param name = "stream"> Поток данных </param>
+            <param name = "sizeStream"> [Необязательный параметр] Размер файла </param>
         </member>
         <member name="P:Converter.OneDriveConverter.GUID">
             <summary>
@@ -127,9 +192,15 @@
         </member>
         <member name="M:Converter.OneDriveConverterConsole.ConvertFileFromDiskSource(System.String)">
             <summary>
-            Конвертируем файл из диска
+            Конвертация файла из диска
             </summary>
-            <param name="fileName"></param>
+            <param name = "fileName"> Название файла </param>
+        </member>
+        <member name="M:Converter.UnconnectedException.#ctor(System.String)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name = "message"> Сообщение </param>
         </member>
     </members>
 </doc>

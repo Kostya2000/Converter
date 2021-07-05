@@ -1,9 +1,9 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Net;
 using System.Collections.Generic;
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
+using Microsoft.Extensions.Logging;
 
 namespace Converter
 {
@@ -12,20 +12,39 @@ namespace Converter
         private JToken token;
         private JToken uploadUrl;
         private readonly ILogger logger;
+
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name = "logger"> Логгер </param>
         public OneDriveConnection(ILogger logger)
         {
             this.logger = logger;
         }
 
-        public void Connector(ref Stream reqStream, out WebRequest request, string method, string graphUrl, string contentType, bool returnReqStream = false, WebHeaderCollection header = null)
+        /// <summary>
+        /// Установка соединения с сервером
+        /// </summary>
+        /// <param name = "reqStream"> [Ссылка ref] Поток для отправки тела запроса </param>
+        /// <param name = "request"> [Ссылка out] Запрос </param>
+        /// <param name = "method"> Метод </param>
+        /// <param name = "graphUrl"> Конечная точка </param>
+        /// <param name = "contentType"> Тип контента </param>
+        /// <param name = "returnReqStream"> [Необязательный параметр] Открыть поток для открытия тела запроса </param>
+        /// <param name = "needAuth"> [Необязательный параметр] Наличие необходимости в токене доступа </param>
+        /// <param name = "header"> [Необязательный параметр] Дополнительные загаловки запроса. Примечание: указывать токен авторизации не нужно </param>
+        public void Connect(ref Stream reqStream, out WebRequest request, string method, string graphUrl, string contentType, bool returnReqStream = false, bool needAuth = true, WebHeaderCollection header = null)
         {
+            logger.LogInformation($"Выполнение {method} запроса к серверу...");
             if (header == null)
             {
                 header = new WebHeaderCollection();
             }
-            header.Add("Authorization", "Bearer " + Token.ToString());
+            if (needAuth)
+            {
+                header.Add("Authorization", "Bearer " + Token.ToString());
+            }
             request = WebRequest.Create(graphUrl);
-            request.Timeout=60000;
             request.Headers = header;
             request.Method = method;
             request.ContentType = contentType;
@@ -36,9 +55,10 @@ namespace Converter
             reqStream = request.GetRequestStream();
             if (reqStream == null)
             {
-                logger.Error("Не удалось подключится к серверу");
+                logger.LogError("Не удалось подключится к серверу");
                 throw new UnconnectedException("Не удалось подключится к серверу");
             }
+            logger.LogInformation($"Запрос {method} успешно выполнен");
         }
 
         /// <summary>
@@ -50,10 +70,10 @@ namespace Converter
         }
 
         /// <summary>
-        /// Получаем ресурс для отправки диапозонов байт
+        /// Получение ресурс для отправки диапозонов байт
         /// </summary>
-        /// <param name="guid"></param>
-        /// <returns></returns>
+        /// <param name = "guid"> GUID файла </param>
+        /// <returns> Url адрес ресурса </returns>
         public JToken UploadUrl(string guid)
         {
            return uploadUrl ??= GetUploadUrl(guid); 
@@ -62,8 +82,8 @@ namespace Converter
         /// <summary>
         /// Соединение с OneDrive
         /// </summary>
-        /// <returns>Токен доступа</returns>
-        /// <exception cref="UnconnectedException">Не удалось подключиться к серверу</exception>
+        /// <returns> Токен доступа </returns>
+        /// <exception cref = "UnconnectedException"> Не удалось подключиться к серверу </exception>
         private JToken GetToken()
         {
             var body = new Dictionary<string, string>();
@@ -71,74 +91,60 @@ namespace Converter
             body.Add("scope", ".default");
             body.Add("grant_type", "client_credentials");
             body.Add("client_secret", IOneDriveConnection.client_secret);
-
-            using var encodedBody = new FormUrlEncodedContent(body);
-            logger.Info("Выполняется запрос на соединение с OneDrive");
-            using var httpClient = new HttpClient();
-            using var responseMessage = httpClient.PostAsync(IOneDriveConnection.urlAuth, encodedBody).Result;
+            var encodedBody = new FormUrlEncodedContent(body).ReadAsByteArrayAsync();
+            var reqStream = Stream.Null;
+            WebRequest request;
+            Connect(ref reqStream, out request, "POST", IOneDriveConnection.urlAuth, null, true, false);
+            reqStream.Write(encodedBody.Result, 0, encodedBody.Result.Length);
+            var responseMessage = request.GetResponse();
             if (responseMessage == null)
             {
+                logger.LogCritical("Соединение разорвано");
                 throw new UnconnectedException();
             }
-            return ParseToken(responseMessage);
-        }
-
-        /// <summary>
-        /// Парсим ответ от сервера
-        /// </summary>
-        /// <param name="responseMessage">Ответ от сервера</param>
-        /// <returns>Токен доступа</returns>
-        /// <exception cref="UnauthorizedAccessException">Аутентификация не прошла</exception>
-        private JToken ParseToken(HttpResponseMessage responseMessage)
-        {
-            var JSON = responseMessage.Content.ReadAsStringAsync().Result;
-            var document = JObject.Parse(JSON);
-            var token = document["access_token"];
-            if (token == null)
-            {
-                throw new UnauthorizedAccessException("Аутентификация не прошла");
-            }
-            logger.Debug("Аутентификация прошла успешно");
-            return token;
+            var response = new StreamReader(responseMessage.GetResponseStream());
+            return GetAttrValue(response, "access_token");
         }
 
         /// <summary>
         /// Запрос на получение ресурса для отправки большого файла
         /// </summary>
-        /// <returns>Url адрес ресурса</returns>
-        /// <exception cref="UnconnectedException">Не удалось подключиться к серверу</exception>
+        /// <returns> Url адрес ресурса </returns>
+        /// <exception cref = "UnconnectedException"> Не удалось подключиться к серверу </exception>
         private JToken GetUploadUrl(string guid)
         {
-            logger.Info("Выполняется запрос на получение URL с OneDrive");
+            logger.LogInformation("Выполняется запрос на получение URL с OneDrive");
             var reqStream = Stream.Null;
             WebRequest request;
-            Connector(ref reqStream, out request, "POST", $"https://graph.microsoft.com/v1.0/drive/root:/{guid}:/createUploadSession",null);
+            Connect(ref reqStream, out request, "POST", $"https://graph.microsoft.com/v1.0/drive/root:/{guid}:/createUploadSession", null);
             var response = request.GetResponse() as HttpWebResponse;
             var responseStream = new StreamReader(response.GetResponseStream());
             if (responseStream == null)
             {
+                logger.LogCritical("Не удалось подключиться к серверу");
                 throw new UnconnectedException("Не удалось подключиться к серверу");
             }
-            return ParseUploadUrl(responseStream);
+            return GetAttrValue(responseStream, "uploadUrl");
         }
 
         /// <summary>
-        /// Парсим ответ от сервера
+        /// Получаем значение по заданному атрибуту из сообщения от сервера
         /// </summary>
-        /// <param name="responseMessage">Ответ от сервера</param>
-        /// <returns>Url адрес ресурса</returns>
-        /// <exception cref="HttpRequestException">Неправильный запрос к серверу</exception>
-        private JToken ParseUploadUrl(StreamReader responseMessage)
+        /// <param name = "responseMessage"> Сообщение от сервера </param>
+        /// <param name = "attr"> Заданный атрибут </param>
+        /// <returns></returns>
+        private JToken GetAttrValue(StreamReader responseMessage, string attr)
         {
             var responseString = responseMessage.ReadToEnd();
             var document = JObject.Parse(responseString);
-            var uploadUrl = document["uploadUrl"];
-            if (uploadUrl == null)
+            var attrValue = document[attr];
+            if (attrValue == null)
             {
+                logger.LogCritical("Неправильный запрос к серверу");
                 throw new HttpRequestException("Неправильный запрос к серверу");
             }
-            logger.Debug("Url адрес ресурса получен успешно");
-            return uploadUrl;
-        }  
+            logger.LogInformation($"Значение атрибута {attr} получен успешно");
+            return attrValue;
+        }
     }
 }

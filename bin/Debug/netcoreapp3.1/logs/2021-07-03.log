@@ -1,0 +1,531 @@
+2021-07-03 15:12:53.0136  method:  Converter.NLog.Info         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-03 15:12:53.3234  method:  Converter.NLog.Info         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-03 15:12:53.6953  method:  Converter.NLog.Info         
+    INFO Начало загрузки файла с диска 
+
+2021-07-03 15:12:53.7046  method:  Converter.NLog.Info         
+    INFO Файл успешно загружен из диска 
+
+2021-07-03 15:12:53.7046  method:  Converter.NLog.Info         
+    INFO Определение запроса для отправки файла... 
+
+2021-07-03 15:12:53.7046  method:  Converter.NLog.Info         
+    INFO Запрос на отправку файла размером больше 4МБ на OneDrive... 
+
+2021-07-03 15:12:53.7046  method:  Converter.NLog.Info         
+    INFO Отправка фрагментов: 
+
+2021-07-03 15:12:53.7046  method:  Converter.NLog.Info         
+    INFO 1 Content-Range bytes 0-327679/14607066 
+
+2021-07-03 15:12:53.8317  method:  Converter.NLog.Info         
+    INFO Выполняется запрос на получение URL с OneDrive 
+
+2021-07-03 15:12:53.8317  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:12:53.8317  method:  Converter.NLog.Info         
+    INFO Выполняется запрос на аутентификацию с Onedrive... 
+
+2021-07-03 15:12:54.8582  method:  Converter.NLog.Info         
+    INFO Аутентификация прошла успешно 
+
+2021-07-03 15:12:56.0828  method:  Converter.NLog.Info         
+    INFO Url адрес ресурса получен успешно 
+
+2021-07-03 15:12:56.0828  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:12:56.0828  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:01.4614  method:  Converter.NLog.Info         
+    INFO 2 Content-Range bytes 327680-655359/14607066 
+
+2021-07-03 15:13:01.4614  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:01.4614  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:03.2524  method:  Converter.NLog.Info         
+    INFO 3 Content-Range bytes 655360-983039/14607066 
+
+2021-07-03 15:13:03.2524  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:03.2524  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:05.2434  method:  Converter.NLog.Info         
+    INFO 4 Content-Range bytes 983040-1310719/14607066 
+
+2021-07-03 15:13:05.2434  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:05.2434  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:07.1346  method:  Converter.NLog.Info         
+    INFO 5 Content-Range bytes 1310720-1638399/14607066 
+
+2021-07-03 15:13:07.1346  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:07.1346  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:09.0353  method:  Converter.NLog.Info         
+    INFO 6 Content-Range bytes 1638400-1966079/14607066 
+
+2021-07-03 15:13:09.0353  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:09.0353  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:11.8293  method:  Converter.NLog.Info         
+    INFO 7 Content-Range bytes 1966080-2293759/14607066 
+
+2021-07-03 15:13:11.8293  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:11.8293  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:13.3463  method:  Converter.NLog.Info         
+    INFO 8 Content-Range bytes 2293760-2621439/14607066 
+
+2021-07-03 15:13:13.3463  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:13.3463  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:15.3910  method:  Converter.NLog.Info         
+    INFO 9 Content-Range bytes 2621440-2949119/14607066 
+
+2021-07-03 15:13:15.3910  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:15.3910  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:17.0232  method:  Converter.NLog.Info         
+    INFO 10 Content-Range bytes 2949120-3276799/14607066 
+
+2021-07-03 15:13:17.0232  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:17.0232  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:18.6304  method:  Converter.NLog.Info         
+    INFO 11 Content-Range bytes 3276800-3604479/14607066 
+
+2021-07-03 15:13:18.6304  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:18.6304  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:20.3542  method:  Converter.NLog.Info         
+    INFO 12 Content-Range bytes 3604480-3932159/14607066 
+
+2021-07-03 15:13:20.3542  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:20.3542  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:21.9296  method:  Converter.NLog.Info         
+    INFO 13 Content-Range bytes 3932160-4259839/14607066 
+
+2021-07-03 15:13:21.9296  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:21.9296  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:23.7659  method:  Converter.NLog.Info         
+    INFO 14 Content-Range bytes 4259840-4587519/14607066 
+
+2021-07-03 15:13:23.7659  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:23.7659  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:25.3624  method:  Converter.NLog.Info         
+    INFO 15 Content-Range bytes 4587520-4915199/14607066 
+
+2021-07-03 15:13:25.3624  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:25.3624  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:26.8191  method:  Converter.NLog.Info         
+    INFO 16 Content-Range bytes 4915200-5242879/14607066 
+
+2021-07-03 15:13:26.8191  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:26.8191  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:28.2734  method:  Converter.NLog.Info         
+    INFO 17 Content-Range bytes 5242880-5570559/14607066 
+
+2021-07-03 15:13:28.2734  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:28.2734  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:29.8715  method:  Converter.NLog.Info         
+    INFO 18 Content-Range bytes 5570560-5898239/14607066 
+
+2021-07-03 15:13:29.8715  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:29.8715  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:31.4762  method:  Converter.NLog.Info         
+    INFO 19 Content-Range bytes 5898240-6225919/14607066 
+
+2021-07-03 15:13:31.4762  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:31.4762  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:32.8863  method:  Converter.NLog.Info         
+    INFO 20 Content-Range bytes 6225920-6553599/14607066 
+
+2021-07-03 15:13:32.8863  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:32.8863  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:34.3029  method:  Converter.NLog.Info         
+    INFO 21 Content-Range bytes 6553600-6881279/14607066 
+
+2021-07-03 15:13:34.3029  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:34.3029  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:35.7899  method:  Converter.NLog.Info         
+    INFO 22 Content-Range bytes 6881280-7208959/14607066 
+
+2021-07-03 15:13:35.7899  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:35.7899  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:37.1551  method:  Converter.NLog.Info         
+    INFO 23 Content-Range bytes 7208960-7536639/14607066 
+
+2021-07-03 15:13:37.1551  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:37.1551  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:38.5049  method:  Converter.NLog.Info         
+    INFO 24 Content-Range bytes 7536640-7864319/14607066 
+
+2021-07-03 15:13:38.5049  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:38.5049  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:39.8824  method:  Converter.NLog.Info         
+    INFO 25 Content-Range bytes 7864320-8191999/14607066 
+
+2021-07-03 15:13:39.8824  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:39.8824  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:41.3954  method:  Converter.NLog.Info         
+    INFO 26 Content-Range bytes 8192000-8519679/14607066 
+
+2021-07-03 15:13:41.3954  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:41.3954  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:42.5844  method:  Converter.NLog.Info         
+    INFO 27 Content-Range bytes 8519680-8847359/14607066 
+
+2021-07-03 15:13:42.5844  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:42.5844  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:43.8336  method:  Converter.NLog.Info         
+    INFO 28 Content-Range bytes 8847360-9175039/14607066 
+
+2021-07-03 15:13:43.8336  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:43.8336  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:45.1513  method:  Converter.NLog.Info         
+    INFO 29 Content-Range bytes 9175040-9502719/14607066 
+
+2021-07-03 15:13:45.1513  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:45.1513  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:46.3907  method:  Converter.NLog.Info         
+    INFO 30 Content-Range bytes 9502720-9830399/14607066 
+
+2021-07-03 15:13:46.3907  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:46.3907  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:47.4643  method:  Converter.NLog.Info         
+    INFO 31 Content-Range bytes 9830400-10158079/14607066 
+
+2021-07-03 15:13:47.4643  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:47.4643  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:48.4658  method:  Converter.NLog.Info         
+    INFO 32 Content-Range bytes 10158080-10485759/14607066 
+
+2021-07-03 15:13:48.4658  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:48.4658  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:49.5894  method:  Converter.NLog.Info         
+    INFO 33 Content-Range bytes 10485760-10813439/14607066 
+
+2021-07-03 15:13:49.5894  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:49.5894  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:50.5798  method:  Converter.NLog.Info         
+    INFO 34 Content-Range bytes 10813440-11141119/14607066 
+
+2021-07-03 15:13:50.5808  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:50.5808  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:51.5383  method:  Converter.NLog.Info         
+    INFO 35 Content-Range bytes 11141120-11468799/14607066 
+
+2021-07-03 15:13:51.5383  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:51.5383  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:52.5929  method:  Converter.NLog.Info         
+    INFO 36 Content-Range bytes 11468800-11796479/14607066 
+
+2021-07-03 15:13:52.5929  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:52.5929  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:53.7402  method:  Converter.NLog.Info         
+    INFO 37 Content-Range bytes 11796480-12124159/14607066 
+
+2021-07-03 15:13:53.7402  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:53.7402  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:54.7792  method:  Converter.NLog.Info         
+    INFO 38 Content-Range bytes 12124160-12451839/14607066 
+
+2021-07-03 15:13:54.7792  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:54.7792  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:55.8359  method:  Converter.NLog.Info         
+    INFO 39 Content-Range bytes 12451840-12779519/14607066 
+
+2021-07-03 15:13:55.8359  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:55.8359  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:56.6015  method:  Converter.NLog.Info         
+    INFO 40 Content-Range bytes 12779520-13107199/14607066 
+
+2021-07-03 15:13:56.6015  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:56.6015  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:57.5355  method:  Converter.NLog.Info         
+    INFO 41 Content-Range bytes 13107200-13434879/14607066 
+
+2021-07-03 15:13:57.5355  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:57.5355  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:58.3683  method:  Converter.NLog.Info         
+    INFO 42 Content-Range bytes 13434880-13762559/14607066 
+
+2021-07-03 15:13:58.3683  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:58.3683  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:59.1975  method:  Converter.NLog.Info         
+    INFO 43 Content-Range bytes 13762560-14090239/14607066 
+
+2021-07-03 15:13:59.1975  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:59.1975  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:13:59.8465  method:  Converter.NLog.Info         
+    INFO 44 Content-Range bytes 14090240-14417919/14607066 
+
+2021-07-03 15:13:59.8483  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:13:59.8483  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:14:01.6030  method:  Converter.NLog.Info         
+    INFO Отправка последнего фрагмента: 
+
+2021-07-03 15:14:01.6030  method:  Converter.NLog.Info         
+    INFO Content-Range bytes 14417920-14607065/14607066 
+
+2021-07-03 15:14:01.6030  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:14:01.6030  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:14:04.7197  method:  Converter.NLog.Info         
+    INFO Файл успешно передан на сервера 
+
+2021-07-03 15:14:04.7197  method:  Converter.NLog.Info         
+    INFO Запрос на загрузку файла из OneDrive... 
+
+2021-07-03 15:14:04.7197  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:14:08.3455  method:  Converter.NLog.Info         
+    INFO Файл успешно загружен из OneDrive 
+
+2021-07-03 15:14:08.3468  method:  Converter.NLog.Info         
+    INFO Запрос на удаление файла из OneDrive 
+
+2021-07-03 15:14:08.3468  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:14:08.7782  method:  Converter.NLog.Info         
+    INFO Файл успешно удален с сервера 
+
+2021-07-03 15:14:08.7782  method:  Converter.NLog.Info         
+    INFO Начало выгрузки файла на диск 
+
+2021-07-03 15:14:10.1574  method:  Converter.NLog.Info         
+    INFO Файл успешно загружен на диск 
+
+2021-07-03 15:15:08.3165  method:  Converter.NLog.Info         
+    INFO Выполняется загрузка конфигурации OneDrive 
+
+2021-07-03 15:15:08.4966  method:  Converter.NLog.Info         
+    INFO Загрузка конфигурации OneDrive прошла успешно 
+
+2021-07-03 15:15:08.5223  method:  Converter.NLog.Info         
+    INFO Начало загрузки файла с диска 
+
+2021-07-03 15:15:08.5333  method:  Converter.NLog.Info         
+    INFO Файл успешно загружен из диска 
+
+2021-07-03 15:15:08.5333  method:  Converter.NLog.Info         
+    INFO Определение запроса для отправки файла... 
+
+2021-07-03 15:15:08.5462  method:  Converter.NLog.Info         
+    INFO Запрос на отправку файла размером меньше 4МБ на OneDrive... 
+
+2021-07-03 15:15:08.5659  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:15:08.5897  method:  Converter.NLog.Info         
+    INFO Выполняется запрос на аутентификацию с Onedrive... 
+
+2021-07-03 15:15:09.3668  method:  Converter.NLog.Info         
+    INFO Аутентификация прошла успешно 
+
+2021-07-03 15:15:09.3737  method:  Converter.NLog.Info         
+    INFO Запрос успешно выполнен 
+
+2021-07-03 15:15:11.3469  method:  Converter.NLog.Info         
+    INFO Файл успешно отправлен на сервер 
+
+2021-07-03 15:15:11.3469  method:  Converter.NLog.Info         
+    INFO Файл отправлен успешно 
+
+2021-07-03 15:15:11.3469  method:  Converter.NLog.Info         
+    INFO Запрос на загрузку файла из OneDrive... 
+
+2021-07-03 15:15:11.3469  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:15:25.5851  method:  Converter.NLog.Info         
+    INFO Файл успешно загружен из OneDrive 
+
+2021-07-03 15:15:25.5851  method:  Converter.NLog.Info         
+    INFO Запрос на удаление файла из OneDrive 
+
+2021-07-03 15:15:25.5851  method:  Converter.NLog.Info         
+    INFO Выполнение запроса к серверу... 
+
+2021-07-03 15:15:26.0592  method:  Converter.NLog.Info         
+    INFO Файл успешно удален с сервера 
+
+2021-07-03 15:15:26.0592  method:  Converter.NLog.Info         
+    INFO Начало выгрузки файла на диск 
+
+2021-07-03 15:15:26.6087  method:  Converter.NLog.Info         
+    INFO Файл успешно загружен на диск 
+
